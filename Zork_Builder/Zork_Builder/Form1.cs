@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace Zork_Builder
 {
-    public partial class Form1 : Form
+    public partial class formMain : Form
     {
-        public Form1()
+        public formMain()
         {
             InitializeComponent();
+        }
+
+        private void OpenWorldCtrlOToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void UndoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
