@@ -83,5 +83,14 @@
   <ItemGroup>
     <None Include="Resources\grid photo.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\addbutton2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\play button.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

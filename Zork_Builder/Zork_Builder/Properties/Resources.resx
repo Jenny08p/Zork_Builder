@@ -121,4 +121,13 @@
   <data name="grid photo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\grid photo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="add button" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\add button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="addbutton2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\addbutton2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="play button" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\play button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>
