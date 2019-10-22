@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace Zork_Builder
 {
-    public partial class formMain : Form
+    public partial class Zork_Form : Form
     {
-        public formMain()
+        public Zork_Form()
         {
             InitializeComponent();
 
