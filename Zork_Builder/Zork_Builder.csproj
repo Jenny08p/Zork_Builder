@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="RoomView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RoomView.Designer.cs">
+      <DependentUpon>RoomView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Zork_Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -54,6 +60,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="RoomView.resx">
+      <DependentUpon>RoomView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Zork_Form.resx">
       <DependentUpon>Zork_Form.cs</DependentUpon>
     </EmbeddedResource>
