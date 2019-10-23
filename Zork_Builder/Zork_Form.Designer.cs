@@ -54,10 +54,10 @@
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.flowLayoutPanel_Buttons = new System.Windows.Forms.FlowLayoutPanel();
             this.Button_AddRoom = new System.Windows.Forms.Button();
+            this.playToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Picture_AddRoom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Picture_RunZork)).BeginInit();
-            this.flowLayoutPanel_Buttons.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -65,7 +65,8 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.FileMenu,
-            this.editToolStripMenuItem});
+            this.editToolStripMenuItem,
+            this.playToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
@@ -192,7 +193,7 @@
             // Picture_AddRoom
             // 
             this.Picture_AddRoom.Image = global::Zork_Builder.Properties.Resources.addbutton2;
-            this.Picture_AddRoom.Location = new System.Drawing.Point(58, 2);
+            this.Picture_AddRoom.Location = new System.Drawing.Point(51, 50);
             this.Picture_AddRoom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Picture_AddRoom.Name = "Picture_AddRoom";
             this.Picture_AddRoom.Size = new System.Drawing.Size(55, 49);
@@ -204,7 +205,7 @@
             // Picture_RunZork
             // 
             this.Picture_RunZork.Image = global::Zork_Builder.Properties.Resources.play_button;
-            this.Picture_RunZork.Location = new System.Drawing.Point(3, 2);
+            this.Picture_RunZork.Location = new System.Drawing.Point(0, 50);
             this.Picture_RunZork.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Picture_RunZork.Name = "Picture_RunZork";
             this.Picture_RunZork.Size = new System.Drawing.Size(49, 46);
@@ -241,19 +242,16 @@
             // 
             this.flowLayoutPanel_Buttons.AutoSize = true;
             this.flowLayoutPanel_Buttons.BackColor = System.Drawing.Color.White;
-            this.flowLayoutPanel_Buttons.Controls.Add(this.Picture_RunZork);
-            this.flowLayoutPanel_Buttons.Controls.Add(this.Picture_AddRoom);
-            this.flowLayoutPanel_Buttons.Controls.Add(this.Button_AddRoom);
             this.flowLayoutPanel_Buttons.Dock = System.Windows.Forms.DockStyle.Top;
             this.flowLayoutPanel_Buttons.Location = new System.Drawing.Point(0, 50);
             this.flowLayoutPanel_Buttons.Margin = new System.Windows.Forms.Padding(4);
             this.flowLayoutPanel_Buttons.Name = "flowLayoutPanel_Buttons";
-            this.flowLayoutPanel_Buttons.Size = new System.Drawing.Size(855, 53);
+            this.flowLayoutPanel_Buttons.Size = new System.Drawing.Size(855, 0);
             this.flowLayoutPanel_Buttons.TabIndex = 6;
             // 
             // Button_AddRoom
             // 
-            this.Button_AddRoom.Location = new System.Drawing.Point(119, 2);
+            this.Button_AddRoom.Location = new System.Drawing.Point(112, 51);
             this.Button_AddRoom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Button_AddRoom.Name = "Button_AddRoom";
             this.Button_AddRoom.Size = new System.Drawing.Size(75, 48);
@@ -261,6 +259,13 @@
             this.Button_AddRoom.Text = "Add";
             this.Button_AddRoom.UseVisualStyleBackColor = true;
             this.Button_AddRoom.Click += new System.EventHandler(this.Button_AddRoom_Click);
+            // 
+            // playToolStripMenuItem
+            // 
+            this.playToolStripMenuItem.Name = "playToolStripMenuItem";
+            this.playToolStripMenuItem.Size = new System.Drawing.Size(54, 24);
+            this.playToolStripMenuItem.Text = "Play ";
+            this.playToolStripMenuItem.Click += new System.EventHandler(this.PlayToolStripMenuItem_Click);
             // 
             // Zork_Form
             // 
@@ -270,6 +275,9 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(855, 507);
+            this.Controls.Add(this.Button_AddRoom);
+            this.Controls.Add(this.Picture_AddRoom);
+            this.Controls.Add(this.Picture_RunZork);
             this.Controls.Add(this.flowLayoutPanel_Buttons);
             this.Controls.Add(this.TextBox_RoomSearch);
             this.Controls.Add(this.menuStrip1);
@@ -282,7 +290,6 @@
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Picture_AddRoom)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Picture_RunZork)).EndInit();
-            this.flowLayoutPanel_Buttons.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -315,6 +322,7 @@
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel_Buttons;
         private System.Windows.Forms.Button Button_AddRoom;
+        private System.Windows.Forms.ToolStripMenuItem playToolStripMenuItem;
     }
 }
 

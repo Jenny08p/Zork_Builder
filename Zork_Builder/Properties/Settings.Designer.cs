@@ -26,5 +26,7 @@ namespace Zork_Builder.Properties
                 return defaultInstance;
             }
         }
+
+        public string ZorkGameExecutable { get; internal set; }
     }
 }

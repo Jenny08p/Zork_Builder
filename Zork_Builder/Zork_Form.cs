@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.IO;
 
 namespace Zork_Builder
 {
@@ -77,24 +78,27 @@ namespace Zork_Builder
         {
             RoomView roomView = new RoomView();
             Controls.Add(roomView);
-
-
-
-            // pBox.MouseDown -= new MouseEventHandler(pBox_MouseDown);
-            // pBox.MouseMove -= new MouseEventHandler(pBox_MouseMove);
-            //pBox.Anchor = AnchorStyles.Bottom;
-            //pBox.Size = new Size(200, 200);
-            //pBox.Location = new Point(0, 0);
-            //pBox.BackColor = Color.White;
-
-            
-
-            // pBox.MouseDown += new MouseEventHandler(pBox_MouseDown);
-            // pBox.MouseMove += new MouseEventHandler(pBox_MouseMove);
-            //
-            // private Point MouseDownLocation;
         }
 
+        private void PlayToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ProcessStartInfo processStartInfo = new ProcessStartInfo
+                {
+                    FileName = Properties.Settings.Default.ZorkGameExecutable,
+                    Arguments = Properties.Settings.Default.ZorkGameExecutable,
+                    //WorkingDirectory = Path.GetDirectoryName(Properties.Settings.ZorkGameExecutable),
+                    UseShellExecute = false
+                };
+
+                Process.Start(processStartInfo);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error Playing.");
+            }
+        }
     }
 }
 
