@@ -46,18 +46,14 @@
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.copyCtrlCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pasteCtrlVToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.Picture_AddRoom = new System.Windows.Forms.PictureBox();
-            this.Picture_RunZork = new System.Windows.Forms.PictureBox();
+            this.playToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.TextBox_RoomSearch = new System.Windows.Forms.TextBox();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.flowLayoutPanel_Buttons = new System.Windows.Forms.FlowLayoutPanel();
             this.Button_AddRoom = new System.Windows.Forms.Button();
-            this.playToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Picture_AddRoom)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Picture_RunZork)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -190,28 +186,12 @@
             this.pasteCtrlVToolStripMenuItem.Size = new System.Drawing.Size(226, 26);
             this.pasteCtrlVToolStripMenuItem.Text = "Paste            Ctrl + V";
             // 
-            // Picture_AddRoom
+            // playToolStripMenuItem
             // 
-            this.Picture_AddRoom.Image = global::Zork_Builder.Properties.Resources.addbutton2;
-            this.Picture_AddRoom.Location = new System.Drawing.Point(51, 50);
-            this.Picture_AddRoom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Picture_AddRoom.Name = "Picture_AddRoom";
-            this.Picture_AddRoom.Size = new System.Drawing.Size(55, 49);
-            this.Picture_AddRoom.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Picture_AddRoom.TabIndex = 1;
-            this.Picture_AddRoom.TabStop = false;
-            this.Picture_AddRoom.Click += new System.EventHandler(this.Button_AddRoom_Click);
-            // 
-            // Picture_RunZork
-            // 
-            this.Picture_RunZork.Image = global::Zork_Builder.Properties.Resources.play_button;
-            this.Picture_RunZork.Location = new System.Drawing.Point(0, 50);
-            this.Picture_RunZork.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Picture_RunZork.Name = "Picture_RunZork";
-            this.Picture_RunZork.Size = new System.Drawing.Size(49, 46);
-            this.Picture_RunZork.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Picture_RunZork.TabIndex = 2;
-            this.Picture_RunZork.TabStop = false;
+            this.playToolStripMenuItem.Name = "playToolStripMenuItem";
+            this.playToolStripMenuItem.Size = new System.Drawing.Size(54, 24);
+            this.playToolStripMenuItem.Text = "Play ";
+            this.playToolStripMenuItem.Click += new System.EventHandler(this.PlayToolStripMenuItem_Click);
             // 
             // openFileDialog1
             // 
@@ -251,7 +231,7 @@
             // 
             // Button_AddRoom
             // 
-            this.Button_AddRoom.Location = new System.Drawing.Point(112, 51);
+            this.Button_AddRoom.Location = new System.Drawing.Point(0, 54);
             this.Button_AddRoom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Button_AddRoom.Name = "Button_AddRoom";
             this.Button_AddRoom.Size = new System.Drawing.Size(75, 48);
@@ -259,13 +239,6 @@
             this.Button_AddRoom.Text = "Add";
             this.Button_AddRoom.UseVisualStyleBackColor = true;
             this.Button_AddRoom.Click += new System.EventHandler(this.Button_AddRoom_Click);
-            // 
-            // playToolStripMenuItem
-            // 
-            this.playToolStripMenuItem.Name = "playToolStripMenuItem";
-            this.playToolStripMenuItem.Size = new System.Drawing.Size(54, 24);
-            this.playToolStripMenuItem.Text = "Play ";
-            this.playToolStripMenuItem.Click += new System.EventHandler(this.PlayToolStripMenuItem_Click);
             // 
             // Zork_Form
             // 
@@ -276,8 +249,6 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(855, 507);
             this.Controls.Add(this.Button_AddRoom);
-            this.Controls.Add(this.Picture_AddRoom);
-            this.Controls.Add(this.Picture_RunZork);
             this.Controls.Add(this.flowLayoutPanel_Buttons);
             this.Controls.Add(this.TextBox_RoomSearch);
             this.Controls.Add(this.menuStrip1);
@@ -288,8 +259,6 @@
             this.Text = "Zork_Form";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Picture_AddRoom)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Picture_RunZork)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -314,8 +283,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripMenuItem copyCtrlCToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pasteCtrlVToolStripMenuItem;
-        private System.Windows.Forms.PictureBox Picture_AddRoom;
-        private System.Windows.Forms.PictureBox Picture_RunZork;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.TextBox TextBox_RoomSearch;
         private System.Windows.Forms.SaveFileDialog saveFileDialog;

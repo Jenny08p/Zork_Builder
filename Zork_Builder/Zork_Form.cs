@@ -17,6 +17,12 @@ namespace Zork_Builder
         public Zork_Form()
         {
             InitializeComponent();
+           // InitializeViewModels();
+
+            
+
+
+
 
         }
 
@@ -99,6 +105,7 @@ namespace Zork_Builder
                 MessageBox.Show(ex.Message, "Error Playing.");
             }
         }
+
     }
 }
 
