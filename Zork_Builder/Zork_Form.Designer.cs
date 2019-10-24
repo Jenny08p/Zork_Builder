@@ -66,7 +66,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(855, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(855, 30);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.MenuStrip1_ItemClicked);
@@ -83,7 +83,7 @@
             this.toolStripSeparator2,
             this.exportToolStripMenuItem});
             this.FileMenu.Name = "FileMenu";
-            this.FileMenu.Size = new System.Drawing.Size(46, 24);
+            this.FileMenu.Size = new System.Drawing.Size(46, 26);
             this.FileMenu.Text = "File";
             this.FileMenu.Click += new System.EventHandler(this.FileMenu_Click);
             // 
@@ -153,7 +153,7 @@
             this.copyCtrlCToolStripMenuItem,
             this.pasteCtrlVToolStripMenuItem});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(49, 24);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(49, 26);
             this.editToolStripMenuItem.Text = "Edit";
             // 
             // undoToolStripMenuItem
@@ -189,7 +189,7 @@
             // playToolStripMenuItem
             // 
             this.playToolStripMenuItem.Name = "playToolStripMenuItem";
-            this.playToolStripMenuItem.Size = new System.Drawing.Size(54, 24);
+            this.playToolStripMenuItem.Size = new System.Drawing.Size(54, 26);
             this.playToolStripMenuItem.Text = "Play ";
             this.playToolStripMenuItem.Click += new System.EventHandler(this.PlayToolStripMenuItem_Click);
             // 
@@ -202,7 +202,7 @@
             this.TextBox_RoomSearch.BackColor = System.Drawing.Color.White;
             this.TextBox_RoomSearch.CausesValidation = false;
             this.TextBox_RoomSearch.Dock = System.Windows.Forms.DockStyle.Top;
-            this.TextBox_RoomSearch.Location = new System.Drawing.Point(0, 28);
+            this.TextBox_RoomSearch.Location = new System.Drawing.Point(0, 30);
             this.TextBox_RoomSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TextBox_RoomSearch.Name = "TextBox_RoomSearch";
             this.TextBox_RoomSearch.Size = new System.Drawing.Size(855, 22);
@@ -223,7 +223,7 @@
             this.flowLayoutPanel_Buttons.AutoSize = true;
             this.flowLayoutPanel_Buttons.BackColor = System.Drawing.Color.White;
             this.flowLayoutPanel_Buttons.Dock = System.Windows.Forms.DockStyle.Top;
-            this.flowLayoutPanel_Buttons.Location = new System.Drawing.Point(0, 50);
+            this.flowLayoutPanel_Buttons.Location = new System.Drawing.Point(0, 52);
             this.flowLayoutPanel_Buttons.Margin = new System.Windows.Forms.Padding(4);
             this.flowLayoutPanel_Buttons.Name = "flowLayoutPanel_Buttons";
             this.flowLayoutPanel_Buttons.Size = new System.Drawing.Size(855, 0);
