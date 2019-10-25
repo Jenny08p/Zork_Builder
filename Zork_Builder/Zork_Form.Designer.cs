@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.FileMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.newWorldToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,24 +50,22 @@
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.flowLayoutPanel_Buttons = new System.Windows.Forms.FlowLayoutPanel();
+            this.mainTabControl = new System.Windows.Forms.TabControl();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.addRoomButton = new System.Windows.Forms.Button();
+            this.button8 = new Zork_Builder.Button();
+            this.button7 = new Zork_Builder.Button();
+            this.button6 = new Zork_Builder.Button();
+            this.button5 = new Zork_Builder.Button();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.button1 = new Zork_Builder.Button();
+            this.button4 = new Zork_Builder.Button();
             this.button2 = new Zork_Builder.Button();
             this.button3 = new Zork_Builder.Button();
-            this.button4 = new Zork_Builder.Button();
-            this.worldViewModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.mainTabControl = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.button5 = new Zork_Builder.Button();
-            this.button6 = new Zork_Builder.Button();
-            this.button7 = new Zork_Builder.Button();
-            this.button8 = new Zork_Builder.Button();
-            this.addRoomButton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.worldViewModelBindingSource)).BeginInit();
             this.mainTabControl.SuspendLayout();
-            this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -232,34 +229,6 @@
             this.flowLayoutPanel_Buttons.Size = new System.Drawing.Size(937, 0);
             this.flowLayoutPanel_Buttons.TabIndex = 6;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(419, 350);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(138, 117);
-            this.button1.TabIndex = 7;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(527, 353);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(117, 117);
-            this.button2.TabIndex = 8;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(632, 350);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(123, 138);
-            this.button3.TabIndex = 9;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(743, 350);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(150, 150);
-            this.button4.TabIndex = 10;
-            // 
             // mainTabControl
             // 
             this.mainTabControl.Controls.Add(this.tabPage2);
@@ -269,20 +238,6 @@
             this.mainTabControl.SelectedIndex = 0;
             this.mainTabControl.Size = new System.Drawing.Size(913, 499);
             this.mainTabControl.TabIndex = 11;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Controls.Add(this.button1);
-            this.tabPage1.Controls.Add(this.button4);
-            this.tabPage1.Controls.Add(this.button2);
-            this.tabPage1.Controls.Add(this.button3);
-            this.tabPage1.Location = new System.Drawing.Point(4, 25);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(879, 470);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
-            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // tabPage2
             // 
@@ -299,34 +254,6 @@
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(374, 351);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(150, 150);
-            this.button5.TabIndex = 0;
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(500, 351);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(150, 150);
-            this.button6.TabIndex = 1;
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(613, 351);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(150, 150);
-            this.button7.TabIndex = 2;
-            // 
-            // button8
-            // 
-            this.button8.Location = new System.Drawing.Point(749, 351);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(150, 150);
-            this.button8.TabIndex = 3;
-            // 
             // addRoomButton
             // 
             this.addRoomButton.Location = new System.Drawing.Point(66, 163);
@@ -335,6 +262,76 @@
             this.addRoomButton.TabIndex = 4;
             this.addRoomButton.Text = "button9";
             this.addRoomButton.UseVisualStyleBackColor = true;
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(749, 351);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(150, 150);
+            this.button8.TabIndex = 3;
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(613, 351);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(150, 150);
+            this.button7.TabIndex = 2;
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(500, 351);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(150, 150);
+            this.button6.TabIndex = 1;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(374, 351);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(150, 150);
+            this.button5.TabIndex = 0;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.button1);
+            this.tabPage1.Controls.Add(this.button4);
+            this.tabPage1.Controls.Add(this.button2);
+            this.tabPage1.Controls.Add(this.button3);
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(905, 470);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(419, 350);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(138, 117);
+            this.button1.TabIndex = 7;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(743, 350);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(150, 150);
+            this.button4.TabIndex = 10;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(527, 353);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(117, 117);
+            this.button2.TabIndex = 8;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(632, 350);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(123, 138);
+            this.button3.TabIndex = 9;
             // 
             // Zork_Form
             // 
@@ -354,10 +351,9 @@
             this.Text = "Zork_Form";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.worldViewModelBindingSource)).EndInit();
             this.mainTabControl.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -391,7 +387,6 @@
         private Button button2;
         private Button button3;
         private Button button4;
-        private System.Windows.Forms.BindingSource worldViewModelBindingSource;
         private System.Windows.Forms.TabControl mainTabControl;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage1;
