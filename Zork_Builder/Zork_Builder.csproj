@@ -59,12 +59,6 @@
       <DependentUpon>Button.cs</DependentUpon>
     </Compile>
     <Compile Include="WorldViewModel.cs" />
-    <Compile Include="RoomView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="RoomView.Designer.cs">
-      <DependentUpon>RoomView.cs</DependentUpon>
-    </Compile>
     <Compile Include="Zork_Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,9 +69,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Button.resx">
       <DependentUpon>Button.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="RoomView.resx">
-      <DependentUpon>RoomView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Zork_Form.resx">
       <DependentUpon>Zork_Form.cs</DependentUpon>
