@@ -1,24 +1,46 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Reflection;
+using Zork_Builder;
 
 namespace Zork_Builder
 {
     public partial class Zork_Form : Form
     {
+        private WorldViewModel mViewModel;
+        private bool mIsWorldLoaded;
+        public static string AssemblyTitle = Assembly.GetExecutingAssembly().GetCustomAttribute<AssemblyTitleAttribute>().Title;
         public Zork_Form()
         {
             InitializeComponent();
-            InitializeViewModels();
+            ViewModel = new WorldViewModel();
+            IsWorldLoaded = false;
 
+        }
+
+        private WorldViewModel ViewModel
+        {
+            get => mViewModel;
+            set
+            {
+                if (mViewModel != value)
+                {
+                    mViewModel = value;
+                    worldViewModelBindingSource.DataSource = mViewModel;
+                }
+            }
+        }
+
+        private bool IsWorldLoaded
+        {
+            get => mIsWorldLoaded;
+            set
+            {
+                mIsWorldLoaded = value;
+                mainTabControl.Enabled = mIsWorldLoaded;
+            }
         }
 
         private void InitializeViewModels()
@@ -78,11 +100,11 @@ namespace Zork_Builder
             }
         }
 
-       private void Button_AddRoom_Click(object sender, EventArgs e)
-        {
-            RoomView roomView = new RoomView();
-            Controls.Add(roomView);
-        }
+       //private void Button_AddRoom_Click(object sender, EventArgs e)
+       // {
+       //     RoomView roomView = new RoomView();
+       //     Controls.Add(roomView);
+       // }
 
         private void PlayToolStripMenuItem_Click(object sender, EventArgs e)
         {
