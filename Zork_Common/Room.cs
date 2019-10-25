@@ -4,13 +4,11 @@ using System.Linq;
 using Newtonsoft.Json;
 
 
-
 namespace Zork_Common
 
 {
-    [JsonConverter(typeof(RoomConverter))]
     public class Room : IEquatable<Room>
-    { 
+    {
         [JsonProperty(Order = 1)]
         public string Name { get; private set; }
 
@@ -22,19 +20,6 @@ namespace Zork_Common
 
         [JsonIgnore]
         public Dictionary<Directions, Room> Neighbors { get; private set; }
-
-        public Room():
-            this(string.Empty, string.Empty, new Dictionary<Directions, string>())
-        {
-
-        }
-        public Room(string name, string description, Dictionary<Directions, string> neighboreNames)
-        {
-            Name = name;
-            Description = description; 
-            NeighborsNames = neighboreNames;
-            Neighbors = new Dictionary<Directions, Room>();
-        }
 
         public static bool operator ==(Room lhs, Room rhs)
         {
