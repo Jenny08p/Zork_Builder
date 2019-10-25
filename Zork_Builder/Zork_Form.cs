@@ -17,15 +17,16 @@ namespace Zork_Builder
         public Zork_Form()
         {
             InitializeComponent();
-           // InitializeViewModels();
-
-            
-
-
-
+            InitializeViewModels();
 
         }
 
+        private void InitializeViewModels()
+        {
+
+        }
+
+        public TextBox tBox = new TextBox();
         private void OpenWorldCtrlOToolStripMenuItem_Click(object sender, EventArgs e)
         {
             openFileDialog1.Filter = "Text Document (*.txt)|*.txt|All files (*.*)|*.*";
@@ -37,8 +38,8 @@ namespace Zork_Builder
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 string file = openFileDialog1.FileName;
-                //string text = File.ReadAllText(file);
-                // textBox1.Text = text;
+                string text = File.ReadAllText(file);
+                tBox.Text = text;
             }
 
         }
@@ -77,10 +78,7 @@ namespace Zork_Builder
             }
         }
 
-        private PictureBox pBox = new PictureBox();
-
-
-        private void Button_AddRoom_Click(object sender, EventArgs e)
+       private void Button_AddRoom_Click(object sender, EventArgs e)
         {
             RoomView roomView = new RoomView();
             Controls.Add(roomView);
@@ -92,9 +90,9 @@ namespace Zork_Builder
             {
                 ProcessStartInfo processStartInfo = new ProcessStartInfo
                 {
-                    FileName = Properties.Settings.Default.ZorkGameExecutable,
-                    Arguments = Properties.Settings.Default.ZorkGameExecutable,
-                    //WorkingDirectory = Path.GetDirectoryName(Properties.Settings.ZorkGameExecutable),
+                    FileName = Properties.Settings.Default.DotNetExecutable,
+                    Arguments = $"{Properties.Settings.Default.ZorkGameAssembly} {Properties.Settings.Default.ZorkGameArguments}",
+                    WorkingDirectory = Path.GetDirectoryName(Properties.Settings.Default.ZorkGameAssembly),
                     UseShellExecute = false
                 };
 
