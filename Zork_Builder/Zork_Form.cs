@@ -38,16 +38,9 @@ namespace Zork_Builder
             set
             {
                 mIsWorldLoaded = value;
-                mainTabControl.Enabled = mIsWorldLoaded;
+                mainTab.Enabled = mIsWorldLoaded;
             }
         }
-
-        private void InitializeViewModels()
-        {
-
-        }
-
-        public TextBox tBox = new TextBox();
         private void OpenWorldCtrlOToolStripMenuItem_Click(object sender, EventArgs e)
         {
             openFileDialog1.Filter = "Text Document (*.txt)|*.txt|All files (*.*)|*.*";
@@ -60,7 +53,6 @@ namespace Zork_Builder
             {
                 string file = openFileDialog1.FileName;
                 string text = File.ReadAllText(file);
-                tBox.Text = text;
             }
 
         }
@@ -123,7 +115,6 @@ namespace Zork_Builder
                 MessageBox.Show(ex.Message, "Error Playing.");
             }
         }
-
     }
 }
 
