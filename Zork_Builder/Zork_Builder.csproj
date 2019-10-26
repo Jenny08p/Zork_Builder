@@ -73,12 +73,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Button.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Button.Designer.cs">
-      <DependentUpon>Button.cs</DependentUpon>
-    </Compile>
     <Compile Include="NeighborView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -91,9 +85,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Button.resx">
-      <DependentUpon>Button.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Zork_Form.resx">
       <DependentUpon>Zork_Form.cs</DependentUpon>
     </EmbeddedResource>
