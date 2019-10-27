@@ -14,12 +14,7 @@ namespace Zork_Builder
 
         public NeighborView()
         {
-            InitializeComponent();
-        }
-
-        private void InitializeComponent()
-        {
-            throw new NotImplementedException();
+           
         }
 
         public Room Room
