@@ -9,53 +9,53 @@ namespace Zork_Builder
 {
     public partial class Zork_Form : Form
     {
-        private WorldViewModel mViewModel;
+        //private WorldViewModel mViewModel;
         private bool mIsWorldLoaded;
         public static string AssemblyTitle = Assembly.GetExecutingAssembly().GetCustomAttribute<AssemblyTitleAttribute>().Title;
         public Zork_Form()
         {
             InitializeComponent();
-            ViewModel = new WorldViewModel();
-            IsWorldLoaded = false;
+            //ViewModel = new WorldViewModel();
+            //IsWorldLoaded = false;
         }
 
-        private WorldViewModel ViewModel
-        {
-            get => mViewModel;
-            set
-            {
-                if (mViewModel != value)
-                {
-                    mViewModel = value;
-                    worldViewModelBindingSource.DataSource = mViewModel;
-                }
-            }
-        }
+        //private WorldViewModel ViewModel
+        //{
+        //    get => mViewModel;
+        //    set
+        //    {
+        //        if (mViewModel != value)
+        //        {
+        //            mViewModel = value;
+        //            worldViewModelBindingSource.DataSource = mViewModel;
+        //        }
+        //    }
+        //}
 
-        private bool IsWorldLoaded
-        {
-            get => mIsWorldLoaded;
-            set
-            {
-                mIsWorldLoaded = value;
-                mainTab.Enabled = mIsWorldLoaded;
-            }
-        }
-        private void OpenWorldCtrlOToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            openFileDialog1.Filter = "Text Document (*.txt)|*.txt|All files (*.*)|*.*";
-            openFileDialog1.Title = "Open";
+        //private bool IsWorldLoaded
+        //{
+        //    get => mIsWorldLoaded;
+        //    set
+        //    {
+        //        mIsWorldLoaded = value;
+        //        mainTab.Enabled = mIsWorldLoaded;
+        //    }
+        //}
+        //private void OpenWorldCtrlOToolStripMenuItem_Click(object sender, EventArgs e)
+        //{
+        //    openFileDialog1.Filter = "Text Document (*.txt)|*.txt|All files (*.*)|*.*";
+        //    openFileDialog1.Title = "Open";
         
-            openFileDialog1.InitialDirectory = @"C:\";
-            openFileDialog1.RestoreDirectory = false;
+        //    openFileDialog1.InitialDirectory = @"C:\";
+        //    openFileDialog1.RestoreDirectory = false;
         
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
-            {
-                string file = openFileDialog1.FileName;
-                string text = File.ReadAllText(file);
-            }
+        //    if (openFileDialog1.ShowDialog() == DialogResult.OK)
+        //    {
+        //        string file = openFileDialog1.FileName;
+        //      //  string text = File.ReadAllText(file);
+        //    }
 
-        }
+        //}
 
         private void UndoToolStripMenuItem_Click(object sender, EventArgs e)
         {
