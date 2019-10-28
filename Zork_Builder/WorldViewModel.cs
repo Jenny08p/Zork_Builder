@@ -30,12 +30,12 @@ namespace Zork_Builder
                        mWorld = value;
                        if (mWorld != null)
                        {
-                        Rooms = new BindingList<Room>(mWorld.Rooms);
+                        //Rooms = new BindingList<Room>(mWorld.Rooms);
                      //  Descriptions = new BindingList<Description>(mWorld.Descriptions);
                        }
                        else
                        {
-                         Rooms = new BindingList<Room>(Array.Empty<Room>());
+                        // Rooms = new BindingList<Room>(Array.Empty<Room>());
                      //  Descriptions = new BindingList<Description>(Array.Empty<Description>());
                        }
                    }

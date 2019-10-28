@@ -115,6 +115,11 @@ namespace Zork_Builder
                 MessageBox.Show(ex.Message, "Error Playing.");
             }
         }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

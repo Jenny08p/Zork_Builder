@@ -51,20 +51,23 @@
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.flowLayoutPanel_Buttons = new System.Windows.Forms.FlowLayoutPanel();
-            this.mainTab = new System.Windows.Forms.TabControl();
+            this.worldViewModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.addRoomButton = new System.Windows.Forms.Button();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.worldViewModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.mainTab = new System.Windows.Forms.TabControl();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
-            this.mainTab.SuspendLayout();
-            this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.worldViewModelBindingSource)).BeginInit();
+            this.tabPage2.SuspendLayout();
+            this.mainTab.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -77,7 +80,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(647, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(443, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.MenuStrip1_ItemClicked);
@@ -222,24 +225,21 @@
             this.flowLayoutPanel_Buttons.BackColor = System.Drawing.Color.White;
             this.flowLayoutPanel_Buttons.Dock = System.Windows.Forms.DockStyle.Top;
             this.flowLayoutPanel_Buttons.Location = new System.Drawing.Point(0, 28);
-            this.flowLayoutPanel_Buttons.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.flowLayoutPanel_Buttons.Margin = new System.Windows.Forms.Padding(4);
             this.flowLayoutPanel_Buttons.Name = "flowLayoutPanel_Buttons";
-            this.flowLayoutPanel_Buttons.Size = new System.Drawing.Size(647, 0);
+            this.flowLayoutPanel_Buttons.Size = new System.Drawing.Size(443, 0);
             this.flowLayoutPanel_Buttons.TabIndex = 6;
             // 
-            // mainTab
+            // worldViewModelBindingSource
             // 
-            this.mainTab.Controls.Add(this.tabPage2);
-            this.mainTab.Controls.Add(this.tabPage1);
-            this.mainTab.Location = new System.Drawing.Point(12, 34);
-            this.mainTab.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.mainTab.Name = "mainTab";
-            this.mainTab.SelectedIndex = 0;
-            this.mainTab.Size = new System.Drawing.Size(913, 498);
-            this.mainTab.TabIndex = 11;
+            this.worldViewModelBindingSource.AllowNew = true;
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.label4);
+            this.tabPage2.Controls.Add(this.comboBox1);
+            this.tabPage2.Controls.Add(this.label3);
+            this.tabPage2.Controls.Add(this.button1);
             this.tabPage2.Controls.Add(this.listBox1);
             this.tabPage2.Controls.Add(this.label2);
             this.tabPage2.Controls.Add(this.label1);
@@ -257,7 +257,8 @@
             // 
             // addRoomButton
             // 
-            this.addRoomButton.Location = new System.Drawing.Point(63, 338);
+            this.addRoomButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.addRoomButton.Location = new System.Drawing.Point(63, 382);
             this.addRoomButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.addRoomButton.Name = "addRoomButton";
             this.addRoomButton.Size = new System.Drawing.Size(93, 34);
@@ -265,23 +266,9 @@
             this.addRoomButton.Text = "Add Room";
             this.addRoomButton.UseVisualStyleBackColor = true;
             // 
-            // tabPage1
-            // 
-            this.tabPage1.Location = new System.Drawing.Point(4, 25);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage1.Size = new System.Drawing.Size(905, 469);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Game";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // worldViewModelBindingSource
-            // 
-            this.worldViewModelBindingSource.AllowNew = true;
-            // 
             // textBox1
             // 
+            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox1.Location = new System.Drawing.Point(15, 47);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(198, 22);
@@ -289,10 +276,12 @@
             // 
             // textBox2
             // 
+            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.textBox2.Location = new System.Drawing.Point(15, 101);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(198, 216);
+            this.textBox2.Size = new System.Drawing.Size(198, 260);
             this.textBox2.TabIndex = 6;
             // 
             // label1
@@ -315,13 +304,61 @@
             // 
             // listBox1
             // 
+            this.listBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(245, 22);
+            this.listBox1.Location = new System.Drawing.Point(247, 101);
             this.listBox1.Name = "listBox1";
             this.listBox1.ScrollAlwaysVisible = true;
-            this.listBox1.Size = new System.Drawing.Size(155, 420);
+            this.listBox1.Size = new System.Drawing.Size(155, 260);
             this.listBox1.TabIndex = 10;
+            // 
+            // button1
+            // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.button1.Location = new System.Drawing.Point(268, 382);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(93, 34);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "Delete Room";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(293, 81);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(52, 17);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "Rooms";
+            // 
+            // mainTab
+            // 
+            this.mainTab.Controls.Add(this.tabPage2);
+            this.mainTab.Location = new System.Drawing.Point(12, 34);
+            this.mainTab.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.mainTab.Name = "mainTab";
+            this.mainTab.SelectedIndex = 0;
+            this.mainTab.Size = new System.Drawing.Size(913, 498);
+            this.mainTab.TabIndex = 11;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(247, 47);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(155, 24);
+            this.comboBox1.TabIndex = 13;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(265, 27);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(115, 17);
+            this.label4.TabIndex = 14;
+            this.label4.Text = "Starting Location";
             // 
             // Zork_Form
             // 
@@ -329,7 +366,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(647, 513);
+            this.ClientSize = new System.Drawing.Size(443, 511);
             this.Controls.Add(this.mainTab);
             this.Controls.Add(this.flowLayoutPanel_Buttons);
             this.Controls.Add(this.menuStrip1);
@@ -341,10 +378,10 @@
             this.Text = "Zork_Form";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.mainTab.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.worldViewModelBindingSource)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.worldViewModelBindingSource)).EndInit();
+            this.mainTab.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -374,18 +411,19 @@
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel_Buttons;
         private System.Windows.Forms.ToolStripMenuItem playToolStripMenuItem;
-        
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TabPage tabPage1;
-   
-        private System.Windows.Forms.Button addRoomButton;
         private System.Windows.Forms.BindingSource worldViewModelBindingSource;
-        private System.Windows.Forms.TabControl mainTab;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Button addRoomButton;
+        private System.Windows.Forms.TabControl mainTab;
     }
 }
 
