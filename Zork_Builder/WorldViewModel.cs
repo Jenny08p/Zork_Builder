@@ -42,7 +42,9 @@ namespace Zork_Builder
                }
            }
 
-           public WorldViewModel(World world = null) => World = world;
+        public Game Game { get; internal set; }
+
+        public WorldViewModel(World world = null) => World = world;
 
            public void SaveWorld()
            {

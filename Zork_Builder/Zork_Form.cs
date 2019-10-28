@@ -36,31 +36,14 @@ namespace Zork_Builder
             }
         }
 
-            private void OpenWorldCtrlOToolStripMenuItem_Click(object sender, EventArgs e)
-            {
+       private void OpenWorldCtrlOToolStripMenuItem_Click(object sender, EventArgs e)
+       {
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 ViewModel.Game = JsonConvert.DeserializeObject<Game>(File.ReadAllText(openFileDialog1.FileName));
                 ViewModel.Filename = openFileDialog1.FileName;
             }
-
-            }
-
-        private void UndoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void MenuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
-        private void FileMenu_Click(object sender, EventArgs e)
-        {
-
-        }
-
+       }
         private void SaveCtrlSToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ViewModel.SaveWorld();
@@ -101,9 +84,9 @@ namespace Zork_Builder
             }
         }
 
-        private void label4_Click(object sender, EventArgs e)
+        private void closeWorldToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Close();
         }
     }
 }
