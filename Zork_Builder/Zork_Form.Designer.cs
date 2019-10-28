@@ -64,6 +64,7 @@
             this.mainTab = new System.Windows.Forms.TabControl();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.worldViewModelBindingSource)).BeginInit();
             this.tabPage2.SuspendLayout();
@@ -236,6 +237,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.label5);
             this.tabPage2.Controls.Add(this.label4);
             this.tabPage2.Controls.Add(this.comboBox1);
             this.tabPage2.Controls.Add(this.label3);
@@ -281,7 +283,7 @@
             this.textBox2.Location = new System.Drawing.Point(15, 101);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(198, 260);
+            this.textBox2.Size = new System.Drawing.Size(198, 151);
             this.textBox2.TabIndex = 6;
             // 
             // label1
@@ -360,6 +362,15 @@
             this.label4.TabIndex = 14;
             this.label4.Text = "Starting Location";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(3, 268);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(264, 17);
+            this.label5.TabIndex = 15;
+            this.label5.Text = "The buttons will go here when their done";
+            // 
             // Zork_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -424,6 +435,7 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button addRoomButton;
         private System.Windows.Forms.TabControl mainTab;
+        private System.Windows.Forms.Label label5;
     }
 }
 
