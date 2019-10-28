@@ -56,6 +56,11 @@
             this.addRoomButton = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.worldViewModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.menuStrip1.SuspendLayout();
             this.mainTab.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -71,8 +76,8 @@
             this.playToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(703, 24);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(647, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.MenuStrip1_ItemClicked);
@@ -89,64 +94,64 @@
             this.toolStripSeparator2,
             this.exportToolStripMenuItem});
             this.FileMenu.Name = "FileMenu";
-            this.FileMenu.Size = new System.Drawing.Size(37, 20);
+            this.FileMenu.Size = new System.Drawing.Size(46, 24);
             this.FileMenu.Text = "File";
             this.FileMenu.Click += new System.EventHandler(this.FileMenu_Click);
             // 
             // newWorldToolStripMenuItem
             // 
             this.newWorldToolStripMenuItem.Name = "newWorldToolStripMenuItem";
-            this.newWorldToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
+            this.newWorldToolStripMenuItem.Size = new System.Drawing.Size(279, 26);
             this.newWorldToolStripMenuItem.Text = "New World           Ctrl + N ";
             // 
             // openWorldCtrlOToolStripMenuItem
             // 
             this.openWorldCtrlOToolStripMenuItem.Name = "openWorldCtrlOToolStripMenuItem";
-            this.openWorldCtrlOToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
+            this.openWorldCtrlOToolStripMenuItem.Size = new System.Drawing.Size(279, 26);
             this.openWorldCtrlOToolStripMenuItem.Text = "Open World         Ctrl + O";
             // 
             // closeWorldToolStripMenuItem
             // 
             this.closeWorldToolStripMenuItem.Name = "closeWorldToolStripMenuItem";
-            this.closeWorldToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
+            this.closeWorldToolStripMenuItem.Size = new System.Drawing.Size(279, 26);
             this.closeWorldToolStripMenuItem.Text = "Close World ";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(219, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(276, 6);
             // 
             // saveCtrlSToolStripMenuItem
             // 
             this.saveCtrlSToolStripMenuItem.Name = "saveCtrlSToolStripMenuItem";
-            this.saveCtrlSToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
+            this.saveCtrlSToolStripMenuItem.Size = new System.Drawing.Size(279, 26);
             this.saveCtrlSToolStripMenuItem.Text = "Save...                  Ctrl + S";
             this.saveCtrlSToolStripMenuItem.Click += new System.EventHandler(this.SaveCtrlSToolStripMenuItem_Click);
             // 
             // saveAsToolStripMenuItem
             // 
             this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
+            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(279, 26);
             this.saveAsToolStripMenuItem.Text = "Save as...        Shift + Ctrl + S";
             this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.SaveAsToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(219, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(276, 6);
             // 
             // exportToolStripMenuItem
             // 
             this.exportToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.buildToolStripMenuItem});
             this.exportToolStripMenuItem.Name = "exportToolStripMenuItem";
-            this.exportToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
+            this.exportToolStripMenuItem.Size = new System.Drawing.Size(279, 26);
             this.exportToolStripMenuItem.Text = "Export";
             // 
             // buildToolStripMenuItem
             // 
             this.buildToolStripMenuItem.Name = "buildToolStripMenuItem";
-            this.buildToolStripMenuItem.Size = new System.Drawing.Size(101, 22);
+            this.buildToolStripMenuItem.Size = new System.Drawing.Size(126, 26);
             this.buildToolStripMenuItem.Text = "Build";
             // 
             // editToolStripMenuItem
@@ -158,43 +163,43 @@
             this.copyCtrlCToolStripMenuItem,
             this.pasteCtrlVToolStripMenuItem});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(49, 24);
             this.editToolStripMenuItem.Text = "Edit";
             // 
             // undoToolStripMenuItem
             // 
             this.undoToolStripMenuItem.Name = "undoToolStripMenuItem";
-            this.undoToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+            this.undoToolStripMenuItem.Size = new System.Drawing.Size(226, 26);
             this.undoToolStripMenuItem.Text = "Undo            Ctrl + Z";
             this.undoToolStripMenuItem.Click += new System.EventHandler(this.UndoToolStripMenuItem_Click);
             // 
             // redoToolStripMenuItem
             // 
             this.redoToolStripMenuItem.Name = "redoToolStripMenuItem";
-            this.redoToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+            this.redoToolStripMenuItem.Size = new System.Drawing.Size(226, 26);
             this.redoToolStripMenuItem.Text = "Redo            Ctrl + Y";
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(176, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(223, 6);
             // 
             // copyCtrlCToolStripMenuItem
             // 
             this.copyCtrlCToolStripMenuItem.Name = "copyCtrlCToolStripMenuItem";
-            this.copyCtrlCToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+            this.copyCtrlCToolStripMenuItem.Size = new System.Drawing.Size(226, 26);
             this.copyCtrlCToolStripMenuItem.Text = "Copy            Ctrl + C";
             // 
             // pasteCtrlVToolStripMenuItem
             // 
             this.pasteCtrlVToolStripMenuItem.Name = "pasteCtrlVToolStripMenuItem";
-            this.pasteCtrlVToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+            this.pasteCtrlVToolStripMenuItem.Size = new System.Drawing.Size(226, 26);
             this.pasteCtrlVToolStripMenuItem.Text = "Paste            Ctrl + V";
             // 
             // playToolStripMenuItem
             // 
             this.playToolStripMenuItem.Name = "playToolStripMenuItem";
-            this.playToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.playToolStripMenuItem.Size = new System.Drawing.Size(54, 24);
             this.playToolStripMenuItem.Text = "Play ";
             this.playToolStripMenuItem.Click += new System.EventHandler(this.PlayToolStripMenuItem_Click);
             // 
@@ -204,10 +209,10 @@
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(421, 0);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.richTextBox1.Location = new System.Drawing.Point(561, 0);
+            this.richTextBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(59, 20);
+            this.richTextBox1.Size = new System.Drawing.Size(77, 24);
             this.richTextBox1.TabIndex = 5;
             this.richTextBox1.Text = "";
             // 
@@ -216,51 +221,57 @@
             this.flowLayoutPanel_Buttons.AutoSize = true;
             this.flowLayoutPanel_Buttons.BackColor = System.Drawing.Color.White;
             this.flowLayoutPanel_Buttons.Dock = System.Windows.Forms.DockStyle.Top;
-            this.flowLayoutPanel_Buttons.Location = new System.Drawing.Point(0, 24);
+            this.flowLayoutPanel_Buttons.Location = new System.Drawing.Point(0, 28);
+            this.flowLayoutPanel_Buttons.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.flowLayoutPanel_Buttons.Name = "flowLayoutPanel_Buttons";
-            this.flowLayoutPanel_Buttons.Size = new System.Drawing.Size(703, 0);
+            this.flowLayoutPanel_Buttons.Size = new System.Drawing.Size(647, 0);
             this.flowLayoutPanel_Buttons.TabIndex = 6;
             // 
             // mainTab
             // 
             this.mainTab.Controls.Add(this.tabPage2);
             this.mainTab.Controls.Add(this.tabPage1);
-            this.mainTab.Location = new System.Drawing.Point(9, 28);
-            this.mainTab.Margin = new System.Windows.Forms.Padding(2);
+            this.mainTab.Location = new System.Drawing.Point(12, 34);
+            this.mainTab.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.mainTab.Name = "mainTab";
             this.mainTab.SelectedIndex = 0;
-            this.mainTab.Size = new System.Drawing.Size(685, 405);
+            this.mainTab.Size = new System.Drawing.Size(913, 498);
             this.mainTab.TabIndex = 11;
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.listBox1);
+            this.tabPage2.Controls.Add(this.label2);
+            this.tabPage2.Controls.Add(this.label1);
+            this.tabPage2.Controls.Add(this.textBox2);
+            this.tabPage2.Controls.Add(this.textBox1);
             this.tabPage2.Controls.Add(this.addRoomButton);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(2);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage2.Size = new System.Drawing.Size(677, 379);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPage2.Size = new System.Drawing.Size(905, 469);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Rooms";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // addRoomButton
             // 
-            this.addRoomButton.Location = new System.Drawing.Point(281, 177);
-            this.addRoomButton.Margin = new System.Windows.Forms.Padding(2);
+            this.addRoomButton.Location = new System.Drawing.Point(63, 338);
+            this.addRoomButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.addRoomButton.Name = "addRoomButton";
-            this.addRoomButton.Size = new System.Drawing.Size(70, 28);
+            this.addRoomButton.Size = new System.Drawing.Size(93, 34);
             this.addRoomButton.TabIndex = 4;
             this.addRoomButton.Text = "Add Room";
             this.addRoomButton.UseVisualStyleBackColor = true;
             // 
             // tabPage1
             // 
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage1.Size = new System.Drawing.Size(677, 379);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPage1.Size = new System.Drawing.Size(905, 469);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Game";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -269,26 +280,70 @@
             // 
             this.worldViewModelBindingSource.AllowNew = true;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(15, 47);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(198, 22);
+            this.textBox1.TabIndex = 5;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(15, 101);
+            this.textBox2.Multiline = true;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(198, 216);
+            this.textBox2.TabIndex = 6;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(83, 27);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(45, 17);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Name";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(60, 81);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(79, 17);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Description";
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 16;
+            this.listBox1.Location = new System.Drawing.Point(245, 22);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.ScrollAlwaysVisible = true;
+            this.listBox1.Size = new System.Drawing.Size(155, 420);
+            this.listBox1.TabIndex = 10;
+            // 
             // Zork_Form
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(703, 444);
+            this.ClientSize = new System.Drawing.Size(647, 513);
             this.Controls.Add(this.mainTab);
             this.Controls.Add(this.flowLayoutPanel_Buttons);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.richTextBox1);
             this.ForeColor = System.Drawing.SystemColors.ActiveBorder;
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Zork_Form";
             this.Text = "Zork_Form";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.mainTab.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.worldViewModelBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -326,6 +381,11 @@
         private System.Windows.Forms.Button addRoomButton;
         private System.Windows.Forms.BindingSource worldViewModelBindingSource;
         private System.Windows.Forms.TabControl mainTab;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }
 

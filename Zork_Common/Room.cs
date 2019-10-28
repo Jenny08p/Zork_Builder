@@ -12,14 +12,15 @@ namespace Zork_Common
     public class Room : IEquatable<Room>
     { 
         //[JsonProperty(Order = 1)]
-        public string Name { get; private set; }
+        public string Name { get; set; }
+
         public string Description { get; set; }
 
         [JsonProperty(PropertyName = "Neighbors", Order = 3)]
         private Dictionary<Directions, string> NeighborsNames { get; set; }
 
-        [JsonIgnore]
-        public Dictionary<Directions, Room> Neighbors { get; private set; }
+       [JsonIgnore]
+       public Dictionary<Directions, Room> Neighbors { get; set; }
 
         public Room():
             this(string.Empty, string.Empty, new Dictionary<Directions, string>())
@@ -27,7 +28,7 @@ namespace Zork_Common
 
         }
         public Room(string name, string description, Dictionary<Directions, string> neighboreNames)
-        {
+        { 
             Name = name;
             Description = description; 
             NeighborsNames = neighboreNames;

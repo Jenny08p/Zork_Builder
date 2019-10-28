@@ -15,11 +15,11 @@ namespace Zork_Builder
     {
            public event PropertyChangedEventHandler PropertyChanged;
 
-           public string Filename { get; set; }
+         
+          public string Filename { get; set; }
 
            public BindingList<Room> Rooms { get; set; }
 
-          // public BindingList<Description> Descriptions { get; set; }
 
            public World World
            {
@@ -30,12 +30,12 @@ namespace Zork_Builder
                        mWorld = value;
                        if (mWorld != null)
                        {
-                          // Rooms = new BindingList<Room>(mWorld.Rooms); put back later
+                        Rooms = new BindingList<Room>(mWorld.Rooms);
                      //  Descriptions = new BindingList<Description>(mWorld.Descriptions);
                        }
                        else
                        {
-                           Rooms = new BindingList<Room>(Array.Empty<Room>());
+                         Rooms = new BindingList<Room>(Array.Empty<Room>());
                      //  Descriptions = new BindingList<Description>(Array.Empty<Description>());
                        }
                    }
@@ -63,6 +63,7 @@ namespace Zork_Builder
            }
 
            private World mWorld;
+        
        }
     }
    

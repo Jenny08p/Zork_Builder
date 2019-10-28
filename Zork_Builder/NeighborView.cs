@@ -25,11 +25,11 @@ namespace Zork_Builder
                 mRoom = value;
                 if (mRoom != null)
                 {
-                   // Neighbor = mRoom.Neighbors.TryGetValue(Directions, out Room neighbor) ? neighbor : null; 
+                  // Neighbor = mRoom.Neighbors.TryGetValue(Directions, out Room neighbor) ? neighbor : null; 
                 }
                 else
                 {
-                    Neighbor = null;
+                    //Neighbor = null;
                 }
             }
         }
