@@ -34,7 +34,7 @@ namespace Zork_Builder
                 mRoom = value;
                 if (mRoom != null)
                 {
-                    Neighbor = mRoom.Neighbors.TryGetValue(Directions, new Room neighbor) ? neighbor : null;
+                    //Neighbor = mRoom.Neighbors.TryGetValue(Directions, new Room neighbor) ? neighbor : null;
                 }
                 else
                 {

@@ -11,7 +11,7 @@ namespace Zork_Builder
 {
     public partial class Zork_Form : Form
     {
-        private WorldViewModel ViewModel;
+        private WorldViewModel mViewModel;
 
         public bool IsWorldLoaded { get; }
 
@@ -19,60 +19,32 @@ namespace Zork_Builder
         public Zork_Form()
         {
             InitializeComponent();
-            ViewModel = new WorldViewModel();
+            mViewModel = new WorldViewModel();
             IsWorldLoaded = false;
         }
 
-        private WorldViewModel mViewModel
-        {
-            get => mViewModel;
-            set
-            {
-                if (mViewModel != value)
-                {
-                    mViewModel = value;
-                    worldViewModelBindingSource.DataSource = mViewModel;
-                }
-            }
-        }
-
-        public Stream filename { get; private set; }
-
-        private void OpenWorldCtrlOToolStripMenuItem_Click(object sender, EventArgs e)
+        private void OpenWorldToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                ViewModel.Game = JsonConvert.DeserializeObject<Game>(File.ReadAllText(openFileDialog1.FileName));
-                ViewModel.Filename = openFileDialog1.FileName;
+                mViewModel.Game = JsonConvert.DeserializeObject<Game>(File.ReadAllText(openFileDialog1.FileName));
+                mViewModel.Filename = openFileDialog1.FileName;
+                roomsBindingSource.DataSource = mViewModel.Rooms;
             }
         }
         private void SaveCtrlSToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            JsonSerializer serializer = new JsonSerializer
-            {
-                Formatting = Formatting.Indented
-            };
-            using (StreamWriter streamWriter = new StreamWriter(filename))
-            using (JsonWriter jsonWriter = new JsonTextWriter(streamWriter))
-            {
-                serializer.Serialize(jsonWriter, this);
-            }
+            mViewModel.SaveGame();
         }
-
 
         private void SaveAsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
-                ViewModel.Filename = saveFileDialog.FileName;
-                ViewModel.SaveWorld();
+                mViewModel.Filename = saveFileDialog.FileName;
+                mViewModel.SaveGame();
             }
         }
-
-
-        //     RoomView roomView = new RoomView();
-        //     Controls.Add(roomView);
-
 
         private void PlayToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -95,19 +67,9 @@ namespace Zork_Builder
 
         }
 
-        private void closeWorldToolStripMenuItem_Click(object sender, EventArgs e)
+        private void CloseWorldToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Close();
-        }
-
-        private void directionButton1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void openFileDialog1_FileOk(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-
         }
     }
 }

@@ -13,79 +13,54 @@ namespace Zork_Builder
 {
     public class WorldViewModel : INotifyPropertyChanged
     {
-           public event PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler PropertyChanged;
 
-         
-          public string Filename { get; set; }
+        public string Filename { get; set; }
 
-           public BindingList<Room> Rooms { get; set; }
+        public BindingList<Room> Rooms { get; set; }
 
-           public WorldViewModel()
-           {
-             //= new Dictionary<Directions, NeighborView>(Directions, NeighborView)()
-             //   {
-
-             //   }
-           }
-
-
-
-           public World World
-           {
-               set
-               {
-                   if (mWorld != value)
-                   {
-                       mWorld = value;
-                       if (mWorld != null)
-                       {
-                        //Rooms = new BindingList<Room>(mWorld.Rooms);
-                     //  Descriptions = new BindingList<Description>(mWorld.Descriptions);
-                       }
-                       else
-                       {
-                        // Rooms = new BindingList<Room>(Array.Empty<Room>());
-                     //  Descriptions = new BindingList<Description>(Array.Empty<Description>());
-                       }
-                   }
-               }
-           }
-
-        public Game Game { get; internal set; }
-        public Room SelectedRoom { get; private set; }
-
-        public WorldViewModel(World world = null) => World = world;
-
-           public void SaveWorld()
-           {
-               if (string.IsNullOrEmpty(Filename))
-               {
-                   throw new InvalidProgramException("Filename expected.");
-               }
-
-               JsonSerializer serializer = new JsonSerializer
-               {
-                   Formatting = Formatting.Indented
-               };
-               using (StreamWriter streamWriter = new StreamWriter(Filename))
-               using (JsonWriter jsonWriter = new JsonTextWriter(streamWriter))
-               {
-                   serializer.Serialize(jsonWriter, mWorld);
-               }
-           }
-
-
-        private void RoomListBox_SelectIndexChange(object sender, EventArgs eventArgs)
+        public WorldViewModel()
         {
-            //SelectedRoom = roomListBox_Selecitem as Room;
-            //selectedRoomBindingSource.DataSource = SelectedRoom as object ?? typeof(Room)
-            //foreach (var entry in DirectionNeighborViewMap)
-            //{
-            //    entry.Value.Room = SelectedRoom;
-            //}
+            Rooms = new BindingList<Room>(Array.Empty<Room>());
         }
-           private World mWorld;
-        
-       }
+
+        public Game Game
+        {
+            set
+            {
+                if (mGame != value)
+                {
+                    mGame = value;
+                    if (mGame != null && mGame.World != null && mGame.World.Rooms != null)
+                    {
+                        Rooms = new BindingList<Room>(mGame.World.Rooms.ToList());
+                    }
+                    else
+                    {
+                        Rooms = new BindingList<Room>(Array.Empty<Room>());
+                    }
+                }
+            }
+        }
+
+        public void SaveGame()
+        {
+            if (string.IsNullOrEmpty(Filename))
+            {
+                throw new InvalidProgramException("Filename expected.");
+            }
+
+            JsonSerializer serializer = new JsonSerializer
+            {
+                Formatting = Formatting.Indented
+            };
+            using (StreamWriter streamWriter = new StreamWriter(Filename))
+            using (JsonWriter jsonWriter = new JsonTextWriter(streamWriter))
+            {
+                serializer.Serialize(jsonWriter, mGame);
+            }
+        }
+
+        private Game mGame;
     }
-   
+}
