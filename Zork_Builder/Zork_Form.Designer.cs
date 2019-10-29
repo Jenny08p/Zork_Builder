@@ -44,6 +44,10 @@
             this.flowLayoutPanel_Buttons = new System.Windows.Forms.FlowLayoutPanel();
             this.worldViewModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.directionButton4 = new Zork_Builder.directionButton();
+            this.directionButton3 = new Zork_Builder.directionButton();
+            this.directionButton2 = new Zork_Builder.directionButton();
+            this.directionButton1 = new Zork_Builder.directionButton();
             this.label4 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -52,19 +56,15 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.roomsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.addRoomButton = new System.Windows.Forms.Button();
             this.mainTab = new System.Windows.Forms.TabControl();
-            this.directionButton4 = new Zork_Builder.directionButton();
-            this.directionButton3 = new Zork_Builder.directionButton();
-            this.directionButton2 = new Zork_Builder.directionButton();
-            this.directionButton1 = new Zork_Builder.directionButton();
-            this.roomsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.worldViewModelBindingSource)).BeginInit();
             this.tabPage2.SuspendLayout();
-            this.mainTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.roomsBindingSource)).BeginInit();
+            this.mainTab.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -76,7 +76,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(443, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(443, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -90,7 +90,7 @@
             this.saveCtrlSToolStripMenuItem,
             this.saveAsToolStripMenuItem});
             this.FileMenu.Name = "FileMenu";
-            this.FileMenu.Size = new System.Drawing.Size(46, 26);
+            this.FileMenu.Size = new System.Drawing.Size(46, 24);
             this.FileMenu.Text = "File";
             // 
             // newWorldToolStripMenuItem
@@ -139,13 +139,15 @@
             // playToolStripMenuItem
             // 
             this.playToolStripMenuItem.Name = "playToolStripMenuItem";
-            this.playToolStripMenuItem.Size = new System.Drawing.Size(54, 26);
+            this.playToolStripMenuItem.Size = new System.Drawing.Size(54, 24);
             this.playToolStripMenuItem.Text = "Play ";
             this.playToolStripMenuItem.Click += new System.EventHandler(this.PlayToolStripMenuItem_Click);
             // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog1.Filter = "Work Files (*json)|*.json";
+            this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
             // 
             // richTextBox1
             // 
@@ -161,7 +163,7 @@
             this.flowLayoutPanel_Buttons.AutoSize = true;
             this.flowLayoutPanel_Buttons.BackColor = System.Drawing.Color.White;
             this.flowLayoutPanel_Buttons.Dock = System.Windows.Forms.DockStyle.Top;
-            this.flowLayoutPanel_Buttons.Location = new System.Drawing.Point(0, 30);
+            this.flowLayoutPanel_Buttons.Location = new System.Drawing.Point(0, 28);
             this.flowLayoutPanel_Buttons.Margin = new System.Windows.Forms.Padding(4);
             this.flowLayoutPanel_Buttons.Name = "flowLayoutPanel_Buttons";
             this.flowLayoutPanel_Buttons.Size = new System.Drawing.Size(443, 0);
@@ -195,6 +197,35 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Rooms";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // directionButton4
+            // 
+            this.directionButton4.Location = new System.Drawing.Point(122, 332);
+            this.directionButton4.Name = "directionButton4";
+            this.directionButton4.Size = new System.Drawing.Size(112, 74);
+            this.directionButton4.TabIndex = 18;
+            // 
+            // directionButton3
+            // 
+            this.directionButton3.Location = new System.Drawing.Point(3, 332);
+            this.directionButton3.Name = "directionButton3";
+            this.directionButton3.Size = new System.Drawing.Size(94, 70);
+            this.directionButton3.TabIndex = 17;
+            // 
+            // directionButton2
+            // 
+            this.directionButton2.Location = new System.Drawing.Point(122, 258);
+            this.directionButton2.Name = "directionButton2";
+            this.directionButton2.Size = new System.Drawing.Size(91, 78);
+            this.directionButton2.TabIndex = 16;
+            // 
+            // directionButton1
+            // 
+            this.directionButton1.Location = new System.Drawing.Point(3, 258);
+            this.directionButton1.Name = "directionButton1";
+            this.directionButton1.Size = new System.Drawing.Size(93, 78);
+            this.directionButton1.TabIndex = 15;
+            this.directionButton1.Load += new System.EventHandler(this.directionButton1_Load);
             // 
             // label4
             // 
@@ -273,6 +304,10 @@
             this.textBox2.Size = new System.Drawing.Size(198, 151);
             this.textBox2.TabIndex = 6;
             // 
+            // roomsBindingSource
+            // 
+            this.roomsBindingSource.DataSource = typeof(Zork_Common.Room);
+            // 
             // textBox1
             // 
             this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -303,39 +338,6 @@
             this.mainTab.Size = new System.Drawing.Size(913, 498);
             this.mainTab.TabIndex = 11;
             // 
-            // directionButton4
-            // 
-            this.directionButton4.Location = new System.Drawing.Point(122, 332);
-            this.directionButton4.Name = "directionButton4";
-            this.directionButton4.Size = new System.Drawing.Size(112, 74);
-            this.directionButton4.TabIndex = 18;
-            // 
-            // directionButton3
-            // 
-            this.directionButton3.Location = new System.Drawing.Point(3, 332);
-            this.directionButton3.Name = "directionButton3";
-            this.directionButton3.Size = new System.Drawing.Size(94, 70);
-            this.directionButton3.TabIndex = 17;
-            // 
-            // directionButton2
-            // 
-            this.directionButton2.Location = new System.Drawing.Point(122, 258);
-            this.directionButton2.Name = "directionButton2";
-            this.directionButton2.Size = new System.Drawing.Size(91, 78);
-            this.directionButton2.TabIndex = 16;
-            // 
-            // directionButton1
-            // 
-            this.directionButton1.Location = new System.Drawing.Point(3, 258);
-            this.directionButton1.Name = "directionButton1";
-            this.directionButton1.Size = new System.Drawing.Size(93, 78);
-            this.directionButton1.TabIndex = 15;
-            this.directionButton1.Load += new System.EventHandler(this.directionButton1_Load);
-            // 
-            // roomsBindingSource
-            // 
-            this.roomsBindingSource.DataSource = typeof(Zork_Common.Room);
-            // 
             // Zork_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -357,8 +359,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.worldViewModelBindingSource)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            this.mainTab.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.roomsBindingSource)).EndInit();
+            this.mainTab.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -39,13 +39,13 @@ namespace Zork_Builder
         public Stream filename { get; private set; }
 
         private void OpenWorldCtrlOToolStripMenuItem_Click(object sender, EventArgs e)
-       {
+        {
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 ViewModel.Game = JsonConvert.DeserializeObject<Game>(File.ReadAllText(openFileDialog1.FileName));
                 ViewModel.Filename = openFileDialog1.FileName;
             }
-       }
+        }
         private void SaveCtrlSToolStripMenuItem_Click(object sender, EventArgs e)
         {
             JsonSerializer serializer = new JsonSerializer
@@ -69,10 +69,10 @@ namespace Zork_Builder
             }
         }
 
-  
-       //     RoomView roomView = new RoomView();
-       //     Controls.Add(roomView);
-     
+
+        //     RoomView roomView = new RoomView();
+        //     Controls.Add(roomView);
+
 
         private void PlayToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -92,6 +92,7 @@ namespace Zork_Builder
             {
                 MessageBox.Show(ex.Message, "Error Playing.");
             }
+
         }
 
         private void closeWorldToolStripMenuItem_Click(object sender, EventArgs e)
@@ -100,6 +101,11 @@ namespace Zork_Builder
         }
 
         private void directionButton1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void openFileDialog1_FileOk(object sender, System.ComponentModel.CancelEventArgs e)
         {
 
         }

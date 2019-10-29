@@ -9,31 +9,57 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Zork_Common;
 
+
 namespace Zork_Builder
 {
     public partial class directionButton : UserControl
     {
         public WorldViewModel ViewModel { get; set; }
 
-        //public Room Room
-        //{
-        //    //get => mRoom;
-        //    //set
-        //    //{
-        //    //    mRoom = value;
-        //    //    if (mRoom != null)
-        //    //    {
-        //    //        Neighbor = mRoom.Neighbors.TryValue(Directions, out Room neighbor) ? neighbor : null;
-        //    //    }
-        //    //    else
-        //    //    {
-        //    //        Neighbor = null;
-        //    //    }
-        //    //}
-        //}
+        public Room Neighbor
+    {
+       get => mNeighbor;
+       set
+       {
+           mNeighbor = value;
+           neighborLabel.Text = value != null ? value.Name : "<None>"; 
+       }
+    }
 
-        public Room Neighbor { get; private set; }
-        public object mRoom { get; private set; }
+        public Room Room
+        {
+            get => mRoom;
+            set
+            {
+                mRoom = value;
+                if (mRoom != null)
+                {
+                    Neighbor = mRoom.Neighbors.TryGetValue(Directions, new Room neighbor) ? neighbor : null;
+                }
+                else
+                {
+                    Neighbor = null;
+                }
+            }
+        }
+
+        private void neighborButton_Click(object sender, EventArgs e)
+        {
+            //using (neighborButton.ShowDialog() == DialogResult:OK)
+            //{
+
+            //}
+        }
+        public Room mNeighbor { get; private set; }
+       // public Room neighbor { get; private set; }
+        public object Directions { get; private set; }
+        public Room mRoom { get; private set; }
+  
+        public void Clear()
+        {
+            Room = null;
+            Neighbor = null;
+        }
 
         public directionButton()
         {

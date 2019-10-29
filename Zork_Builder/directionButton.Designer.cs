@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.neighborButton = new System.Windows.Forms.Button();
+            this.neighborLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // neighborButton
@@ -39,19 +40,30 @@
             this.neighborButton.TabIndex = 0;
             this.neighborButton.UseVisualStyleBackColor = true;
             // 
+            // neighborLabel
+            // 
+            this.neighborLabel.AutoSize = true;
+            this.neighborLabel.Location = new System.Drawing.Point(32, 38);
+            this.neighborLabel.Name = "neighborLabel";
+            this.neighborLabel.Size = new System.Drawing.Size(0, 17);
+            this.neighborLabel.TabIndex = 1;
+            // 
             // directionButton
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.neighborLabel);
             this.Controls.Add(this.neighborButton);
             this.Name = "directionButton";
             this.Size = new System.Drawing.Size(112, 101);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.Button neighborButton;
+        private System.Windows.Forms.Label neighborLabel;
     }
 }

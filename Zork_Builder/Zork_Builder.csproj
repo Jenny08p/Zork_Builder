@@ -79,6 +79,7 @@
     <Compile Include="directionButton.Designer.cs">
       <DependentUpon>directionButton.cs</DependentUpon>
     </Compile>
+    <Compile Include="Player.cs" />
     <Compile Include="WorldViewModel.cs" />
     <Compile Include="Zork_Form.cs">
       <SubType>Form</SubType>
