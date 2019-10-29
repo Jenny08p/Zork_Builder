@@ -6,6 +6,7 @@ using System.Reflection;
 using Zork_Builder;
 using Newtonsoft.Json;
 using Zork_Common;
+using System.Collections.Generic;
 
 namespace Zork_Builder
 {
@@ -21,6 +22,14 @@ namespace Zork_Builder
             InitializeComponent();
             mViewModel = new WorldViewModel();
             IsWorldLoaded = false;
+
+            mNeighborControls = new Dictionary<Directions, NeighborControl>
+            {
+                { Directions.North, northNeighborControl },
+                { Directions.East, eastNeighborControl },
+                { Directions.South, southNeighborControl },
+                { Directions.West, westNeighborControl },
+            };
         }
 
         private void OpenWorldToolStripMenuItem_Click(object sender, EventArgs e)
@@ -30,6 +39,12 @@ namespace Zork_Builder
                 mViewModel.Game = JsonConvert.DeserializeObject<Game>(File.ReadAllText(openFileDialog1.FileName));
                 mViewModel.Filename = openFileDialog1.FileName;
                 roomsBindingSource.DataSource = mViewModel.Rooms;
+
+                Room selectedRoom = roomsListBox.SelectedItem as Room;
+                foreach (var control in mNeighborControls.Values)
+                {
+                    control.Room = selectedRoom;
+                }
             }
         }
         private void SaveCtrlSToolStripMenuItem_Click(object sender, EventArgs e)
@@ -64,13 +79,14 @@ namespace Zork_Builder
             {
                 MessageBox.Show(ex.Message, "Error Playing.");
             }
-
         }
 
         private void CloseWorldToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Close();
         }
+
+        private readonly Dictionary<Directions, NeighborControl> mNeighborControls;
     }
 }
 

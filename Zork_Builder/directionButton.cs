@@ -17,14 +17,14 @@ namespace Zork_Builder
         public WorldViewModel ViewModel { get; set; }
 
         public Room Neighbor
-    {
-       get => mNeighbor;
-       set
-       {
-           mNeighbor = value;
-           neighborLabel.Text = value != null ? value.Name : "<None>"; 
-       }
-    }
+        {
+            get => mNeighbor;
+            set
+            {
+                mNeighbor = value;
+                neighborLabel.Text = value != null ? value.Name : "<None>";
+            }
+        }
 
         public Room Room
         {
@@ -51,10 +51,10 @@ namespace Zork_Builder
             //}
         }
         public Room mNeighbor { get; private set; }
-       // public Room neighbor { get; private set; }
+        // public Room neighbor { get; private set; }
         public object Directions { get; private set; }
         public Room mRoom { get; private set; }
-  
+
         public void Clear()
         {
             Room = null;

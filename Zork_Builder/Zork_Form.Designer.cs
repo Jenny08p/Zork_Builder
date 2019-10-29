@@ -43,6 +43,7 @@
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.flowLayoutPanel_Buttons = new System.Windows.Forms.FlowLayoutPanel();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.northNeighborControl = new Zork_Builder.NeighborControl();
             this.deleteRoomButton = new System.Windows.Forms.Button();
             this.addRoomButton = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
@@ -55,6 +56,9 @@
             this.roomDescriptionTextBox = new System.Windows.Forms.TextBox();
             this.roomNameTextBox = new System.Windows.Forms.TextBox();
             this.mainTab = new System.Windows.Forms.TabControl();
+            this.southNeighborControl = new Zork_Builder.NeighborControl();
+            this.eastNeighborControl = new Zork_Builder.NeighborControl();
+            this.westNeighborControl = new Zork_Builder.NeighborControl();
             this.menuStrip1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.roomsBindingSource)).BeginInit();
@@ -70,7 +74,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(467, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(492, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -160,11 +164,15 @@
             this.flowLayoutPanel_Buttons.Location = new System.Drawing.Point(0, 28);
             this.flowLayoutPanel_Buttons.Margin = new System.Windows.Forms.Padding(4);
             this.flowLayoutPanel_Buttons.Name = "flowLayoutPanel_Buttons";
-            this.flowLayoutPanel_Buttons.Size = new System.Drawing.Size(467, 0);
+            this.flowLayoutPanel_Buttons.Size = new System.Drawing.Size(492, 0);
             this.flowLayoutPanel_Buttons.TabIndex = 6;
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.westNeighborControl);
+            this.tabPage2.Controls.Add(this.eastNeighborControl);
+            this.tabPage2.Controls.Add(this.southNeighborControl);
+            this.tabPage2.Controls.Add(this.northNeighborControl);
             this.tabPage2.Controls.Add(this.deleteRoomButton);
             this.tabPage2.Controls.Add(this.addRoomButton);
             this.tabPage2.Controls.Add(this.label4);
@@ -179,14 +187,23 @@
             this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage2.Size = new System.Drawing.Size(459, 449);
+            this.tabPage2.Size = new System.Drawing.Size(484, 449);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Rooms";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // northNeighborControl
+            // 
+            this.northNeighborControl.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.northNeighborControl.Direction = Zork_Common.Directions.North;
+            this.northNeighborControl.Location = new System.Drawing.Point(79, 252);
+            this.northNeighborControl.Name = "northNeighborControl";
+            this.northNeighborControl.Size = new System.Drawing.Size(112, 53);
+            this.northNeighborControl.TabIndex = 17;
+            // 
             // deleteRoomButton
             // 
-            this.deleteRoomButton.Location = new System.Drawing.Point(323, 415);
+            this.deleteRoomButton.Location = new System.Drawing.Point(348, 415);
             this.deleteRoomButton.Name = "deleteRoomButton";
             this.deleteRoomButton.Size = new System.Drawing.Size(75, 23);
             this.deleteRoomButton.TabIndex = 16;
@@ -195,7 +212,7 @@
             // 
             // addRoomButton
             // 
-            this.addRoomButton.Location = new System.Drawing.Point(242, 415);
+            this.addRoomButton.Location = new System.Drawing.Point(267, 415);
             this.addRoomButton.Name = "addRoomButton";
             this.addRoomButton.Size = new System.Drawing.Size(75, 23);
             this.addRoomButton.TabIndex = 15;
@@ -205,7 +222,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(244, 27);
+            this.label4.Location = new System.Drawing.Point(269, 27);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(115, 17);
             this.label4.TabIndex = 14;
@@ -214,15 +231,15 @@
             // startingLocationComboBox
             // 
             this.startingLocationComboBox.FormattingEnabled = true;
-            this.startingLocationComboBox.Location = new System.Drawing.Point(247, 47);
+            this.startingLocationComboBox.Location = new System.Drawing.Point(266, 47);
             this.startingLocationComboBox.Name = "startingLocationComboBox";
-            this.startingLocationComboBox.Size = new System.Drawing.Size(204, 24);
+            this.startingLocationComboBox.Size = new System.Drawing.Size(210, 24);
             this.startingLocationComboBox.TabIndex = 13;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(244, 81);
+            this.label3.Location = new System.Drawing.Point(269, 81);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(52, 17);
             this.label3.TabIndex = 12;
@@ -234,7 +251,7 @@
             this.roomsListBox.DisplayMember = "Name";
             this.roomsListBox.FormattingEnabled = true;
             this.roomsListBox.ItemHeight = 16;
-            this.roomsListBox.Location = new System.Drawing.Point(241, 101);
+            this.roomsListBox.Location = new System.Drawing.Point(266, 101);
             this.roomsListBox.Name = "roomsListBox";
             this.roomsListBox.ScrollAlwaysVisible = true;
             this.roomsListBox.Size = new System.Drawing.Size(210, 308);
@@ -289,8 +306,35 @@
             this.mainTab.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.mainTab.Name = "mainTab";
             this.mainTab.SelectedIndex = 0;
-            this.mainTab.Size = new System.Drawing.Size(467, 478);
+            this.mainTab.Size = new System.Drawing.Size(492, 478);
             this.mainTab.TabIndex = 11;
+            // 
+            // southNeighborControl
+            // 
+            this.southNeighborControl.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.southNeighborControl.Direction = Zork_Common.Directions.South;
+            this.southNeighborControl.Location = new System.Drawing.Point(79, 370);
+            this.southNeighborControl.Name = "southNeighborControl";
+            this.southNeighborControl.Size = new System.Drawing.Size(112, 53);
+            this.southNeighborControl.TabIndex = 18;
+            // 
+            // eastNeighborControl
+            // 
+            this.eastNeighborControl.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.eastNeighborControl.Direction = Zork_Common.Directions.East;
+            this.eastNeighborControl.Location = new System.Drawing.Point(148, 311);
+            this.eastNeighborControl.Name = "eastNeighborControl";
+            this.eastNeighborControl.Size = new System.Drawing.Size(112, 53);
+            this.eastNeighborControl.TabIndex = 19;
+            // 
+            // westNeighborControl
+            // 
+            this.westNeighborControl.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.westNeighborControl.Direction = Zork_Common.Directions.West;
+            this.westNeighborControl.Location = new System.Drawing.Point(6, 311);
+            this.westNeighborControl.Name = "westNeighborControl";
+            this.westNeighborControl.Size = new System.Drawing.Size(112, 53);
+            this.westNeighborControl.TabIndex = 20;
             // 
             // Zork_Form
             // 
@@ -298,7 +342,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(467, 515);
+            this.ClientSize = new System.Drawing.Size(492, 515);
             this.Controls.Add(this.mainTab);
             this.Controls.Add(this.flowLayoutPanel_Buttons);
             this.Controls.Add(this.menuStrip1);
@@ -347,6 +391,10 @@
         private System.Windows.Forms.Button deleteRoomButton;
         private System.Windows.Forms.Button addRoomButton;
         private System.Windows.Forms.BindingSource roomsBindingSource;
+        private NeighborControl northNeighborControl;
+        private NeighborControl westNeighborControl;
+        private NeighborControl eastNeighborControl;
+        private NeighborControl southNeighborControl;
     }
 }
 

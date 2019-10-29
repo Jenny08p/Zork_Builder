@@ -80,6 +80,12 @@
     <Compile Include="directionButton.Designer.cs">
       <DependentUpon>directionButton.cs</DependentUpon>
     </Compile>
+    <Compile Include="NeighborControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NeighborControl.Designer.cs">
+      <DependentUpon>NeighborControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Player.cs" />
     <Compile Include="WorldViewModel.cs" />
     <Compile Include="Zork_Form.cs">
@@ -92,6 +98,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="directionButton.resx">
       <DependentUpon>directionButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NeighborControl.resx">
+      <DependentUpon>NeighborControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Zork_Form.resx">
       <DependentUpon>Zork_Form.cs</DependentUpon>
