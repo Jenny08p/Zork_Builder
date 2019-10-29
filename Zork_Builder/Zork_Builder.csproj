@@ -73,8 +73,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="NeighborView.cs">
+    <Compile Include="directionButton.cs">
       <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="directionButton.Designer.cs">
+      <DependentUpon>directionButton.cs</DependentUpon>
     </Compile>
     <Compile Include="WorldViewModel.cs" />
     <Compile Include="Zork_Form.cs">
@@ -85,6 +88,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="directionButton.resx">
+      <DependentUpon>directionButton.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Zork_Form.resx">
       <DependentUpon>Zork_Form.cs</DependentUpon>
     </EmbeddedResource>

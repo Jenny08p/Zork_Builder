@@ -55,10 +55,16 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.addRoomButton = new System.Windows.Forms.Button();
             this.mainTab = new System.Windows.Forms.TabControl();
+            this.directionButton4 = new Zork_Builder.directionButton();
+            this.directionButton3 = new Zork_Builder.directionButton();
+            this.directionButton2 = new Zork_Builder.directionButton();
+            this.directionButton1 = new Zork_Builder.directionButton();
+            this.roomsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.worldViewModelBindingSource)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.mainTab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.roomsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -70,7 +76,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(443, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(443, 30);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -84,7 +90,7 @@
             this.saveCtrlSToolStripMenuItem,
             this.saveAsToolStripMenuItem});
             this.FileMenu.Name = "FileMenu";
-            this.FileMenu.Size = new System.Drawing.Size(46, 24);
+            this.FileMenu.Size = new System.Drawing.Size(46, 26);
             this.FileMenu.Text = "File";
             // 
             // newWorldToolStripMenuItem
@@ -133,7 +139,7 @@
             // playToolStripMenuItem
             // 
             this.playToolStripMenuItem.Name = "playToolStripMenuItem";
-            this.playToolStripMenuItem.Size = new System.Drawing.Size(54, 24);
+            this.playToolStripMenuItem.Size = new System.Drawing.Size(54, 26);
             this.playToolStripMenuItem.Text = "Play ";
             this.playToolStripMenuItem.Click += new System.EventHandler(this.PlayToolStripMenuItem_Click);
             // 
@@ -155,7 +161,7 @@
             this.flowLayoutPanel_Buttons.AutoSize = true;
             this.flowLayoutPanel_Buttons.BackColor = System.Drawing.Color.White;
             this.flowLayoutPanel_Buttons.Dock = System.Windows.Forms.DockStyle.Top;
-            this.flowLayoutPanel_Buttons.Location = new System.Drawing.Point(0, 28);
+            this.flowLayoutPanel_Buttons.Location = new System.Drawing.Point(0, 30);
             this.flowLayoutPanel_Buttons.Margin = new System.Windows.Forms.Padding(4);
             this.flowLayoutPanel_Buttons.Name = "flowLayoutPanel_Buttons";
             this.flowLayoutPanel_Buttons.Size = new System.Drawing.Size(443, 0);
@@ -167,6 +173,10 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.directionButton4);
+            this.tabPage2.Controls.Add(this.directionButton3);
+            this.tabPage2.Controls.Add(this.directionButton2);
+            this.tabPage2.Controls.Add(this.directionButton1);
             this.tabPage2.Controls.Add(this.label4);
             this.tabPage2.Controls.Add(this.comboBox1);
             this.tabPage2.Controls.Add(this.label3);
@@ -215,7 +225,7 @@
             // button1
             // 
             this.button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.button1.Location = new System.Drawing.Point(268, 382);
+            this.button1.Location = new System.Drawing.Point(268, 420);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(93, 34);
@@ -231,7 +241,7 @@
             this.listBox1.Location = new System.Drawing.Point(247, 101);
             this.listBox1.Name = "listBox1";
             this.listBox1.ScrollAlwaysVisible = true;
-            this.listBox1.Size = new System.Drawing.Size(155, 260);
+            this.listBox1.Size = new System.Drawing.Size(155, 308);
             this.listBox1.TabIndex = 10;
             // 
             // label2
@@ -256,6 +266,7 @@
             // 
             this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.textBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.roomsBindingSource, "Description", true));
             this.textBox2.Location = new System.Drawing.Point(15, 101);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
@@ -265,6 +276,7 @@
             // textBox1
             // 
             this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.roomsBindingSource, "Name", true));
             this.textBox1.Location = new System.Drawing.Point(15, 47);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(198, 22);
@@ -273,7 +285,7 @@
             // addRoomButton
             // 
             this.addRoomButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.addRoomButton.Location = new System.Drawing.Point(63, 382);
+            this.addRoomButton.Location = new System.Drawing.Point(63, 420);
             this.addRoomButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.addRoomButton.Name = "addRoomButton";
             this.addRoomButton.Size = new System.Drawing.Size(93, 34);
@@ -291,13 +303,46 @@
             this.mainTab.Size = new System.Drawing.Size(913, 498);
             this.mainTab.TabIndex = 11;
             // 
+            // directionButton4
+            // 
+            this.directionButton4.Location = new System.Drawing.Point(122, 332);
+            this.directionButton4.Name = "directionButton4";
+            this.directionButton4.Size = new System.Drawing.Size(112, 74);
+            this.directionButton4.TabIndex = 18;
+            // 
+            // directionButton3
+            // 
+            this.directionButton3.Location = new System.Drawing.Point(3, 332);
+            this.directionButton3.Name = "directionButton3";
+            this.directionButton3.Size = new System.Drawing.Size(94, 70);
+            this.directionButton3.TabIndex = 17;
+            // 
+            // directionButton2
+            // 
+            this.directionButton2.Location = new System.Drawing.Point(122, 258);
+            this.directionButton2.Name = "directionButton2";
+            this.directionButton2.Size = new System.Drawing.Size(91, 78);
+            this.directionButton2.TabIndex = 16;
+            // 
+            // directionButton1
+            // 
+            this.directionButton1.Location = new System.Drawing.Point(3, 258);
+            this.directionButton1.Name = "directionButton1";
+            this.directionButton1.Size = new System.Drawing.Size(93, 78);
+            this.directionButton1.TabIndex = 15;
+            this.directionButton1.Load += new System.EventHandler(this.directionButton1_Load);
+            // 
+            // roomsBindingSource
+            // 
+            this.roomsBindingSource.DataSource = typeof(Zork_Common.Room);
+            // 
             // Zork_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(443, 511);
+            this.ClientSize = new System.Drawing.Size(443, 556);
             this.Controls.Add(this.mainTab);
             this.Controls.Add(this.flowLayoutPanel_Buttons);
             this.Controls.Add(this.menuStrip1);
@@ -313,6 +358,7 @@
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.mainTab.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.roomsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -346,6 +392,11 @@
         private System.Windows.Forms.Button addRoomButton;
         private System.Windows.Forms.TabControl mainTab;
         public System.Windows.Forms.Label label4;
+        private directionButton directionButton1;
+        private directionButton directionButton4;
+        private directionButton directionButton3;
+        private directionButton directionButton2;
+        private System.Windows.Forms.BindingSource roomsBindingSource;
     }
 }
 

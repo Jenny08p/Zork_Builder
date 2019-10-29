@@ -20,6 +20,15 @@ namespace Zork_Builder
 
            public BindingList<Room> Rooms { get; set; }
 
+           public WorldViewModel()
+           {
+             //= new Dictionary<Directions, NeighborView>(Directions, NeighborView)()
+             //   {
+
+             //   }
+           }
+
+
 
            public World World
            {
@@ -43,6 +52,7 @@ namespace Zork_Builder
            }
 
         public Game Game { get; internal set; }
+        public Room SelectedRoom { get; private set; }
 
         public WorldViewModel(World world = null) => World = world;
 
@@ -64,6 +74,16 @@ namespace Zork_Builder
                }
            }
 
+
+        private void RoomListBox_SelectIndexChange(object sender, EventArgs eventArgs)
+        {
+            //SelectedRoom = roomListBox_Selecitem as Room;
+            //selectedRoomBindingSource.DataSource = SelectedRoom as object ?? typeof(Room)
+            //foreach (var entry in DirectionNeighborViewMap)
+            //{
+            //    entry.Value.Room = SelectedRoom;
+            //}
+        }
            private World mWorld;
         
        }

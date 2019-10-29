@@ -36,7 +36,9 @@ namespace Zork_Builder
             }
         }
 
-       private void OpenWorldCtrlOToolStripMenuItem_Click(object sender, EventArgs e)
+        public Stream filename { get; private set; }
+
+        private void OpenWorldCtrlOToolStripMenuItem_Click(object sender, EventArgs e)
        {
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
@@ -46,7 +48,15 @@ namespace Zork_Builder
        }
         private void SaveCtrlSToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ViewModel.SaveWorld();
+            JsonSerializer serializer = new JsonSerializer
+            {
+                Formatting = Formatting.Indented
+            };
+            using (StreamWriter streamWriter = new StreamWriter(filename))
+            using (JsonWriter jsonWriter = new JsonTextWriter(streamWriter))
+            {
+                serializer.Serialize(jsonWriter, this);
+            }
         }
 
 
@@ -87,6 +97,11 @@ namespace Zork_Builder
         private void closeWorldToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void directionButton1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
