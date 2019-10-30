@@ -87,6 +87,40 @@ namespace Zork_Builder
         }
 
         private readonly Dictionary<Directions, NeighborControl> mNeighborControls;
+
+        private void roomNameTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+   
+        private void addRoomButton_Click(object sender, EventArgs e)
+        {
+        //    using (AddRoomForm addRoomForm = new AddRoomForm())
+        //    {
+        //        if (addPlayerForm.ShowDialog() == DialogResult.OK)
+        //        {
+        //            Player player = new Player { Name = addRoomForm.PlayerName };
+        //            mViewModel.Players.Add(player);
+        //        }
+        //    }
+        }
+
+        private void deleteRoomButton_Click(object sender, EventArgs e)
+        {
+            //if (MessageBox.Show("Delete this item?", AssemblyTitle, MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question) == DialogResult.Yes)
+            //{
+            //    mViewModel.RemoveItem((Room)roomsListBox.SelectedItem);
+            //    roomsListBox.SelectedItem = mViewModel.Rooms.FirstOrDefault();
+            //}
+        }
+
+       // private void ItemsListBox_SelectedIndexChanged(object sender, EventArgs e) => deleteRoomButton.Enabled = itemsListBox.SelectedItem != null;
+        private void AddItemToInventoryButton_Click(object sender, EventArgs e) => ShowNotYetImplementedMessageBox();
+
+        private void RemoveItemFromInventoryButton_Click(object sender, EventArgs e) => ShowNotYetImplementedMessageBox();
+
+        private void ShowNotYetImplementedMessageBox() => MessageBox.Show("Not yet implemented.", AssemblyTitle, MessageBoxButtons.OK, MessageBoxIcon.Information);
+
     }
 }
 

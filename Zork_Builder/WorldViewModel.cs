@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Zork_Common;
 
+
 namespace Zork_Builder
 
 {
@@ -18,6 +19,7 @@ namespace Zork_Builder
         public string Filename { get; set; }
 
         public BindingList<Room> Rooms { get; set; }
+
 
         public WorldViewModel()
         {
@@ -60,6 +62,16 @@ namespace Zork_Builder
                 serializer.Serialize(jsonWriter, mGame);
             }
         }
+
+        //public void RemoveName(Name name)
+        //{
+        //    foreach (Room room in Rooms)
+        //    {
+        //        Room.Rooms.Remove(name);
+        //    }
+
+        //    Names.Remove(name);
+        //}
 
         private Game mGame;
     }
