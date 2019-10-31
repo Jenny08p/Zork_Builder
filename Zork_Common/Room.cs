@@ -35,6 +35,19 @@ namespace Zork_Common
             Neighbors = new Dictionary<Directions, Room>();
         }
 
+        public void UpdateNeighbors(List<Room> rooms)
+        {
+            Neighbors = (from entry in NeighborsNames
+                         let room = rooms.Find(i => i.Name.Equals(entry.Value, System.StringComparison.InvariantCultureIgnoreCase))
+                         where room != null
+                         select (Direction: entry.Key, Room: room)).
+                         ToDictionary(pair => pair.Direction, pair => pair.Room);
+
+            NeighborsNames.Clear();             
+        }
+
+        public override string ToString() => Name;
+
         public static bool operator ==(Room lhs, Room rhs)
         {
             if (ReferenceEquals(lhs, rhs))
@@ -56,7 +69,6 @@ namespace Zork_Common
 
         public bool Equals(Room other) => this == other;
 
-        public override string ToString() => Name;
 
         public override int GetHashCode() => Name.GetHashCode();
 
