@@ -214,7 +214,7 @@
             this.eastNeighborControl.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.eastNeighborControl.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.eastNeighborControl.Direction = Zork_Common.Directions.East;
-            this.eastNeighborControl.Location = new System.Drawing.Point(171, 318);
+            this.eastNeighborControl.Location = new System.Drawing.Point(171, 327);
             this.eastNeighborControl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.eastNeighborControl.Name = "eastNeighborControl";
             this.eastNeighborControl.Neighbor = null;
@@ -285,6 +285,7 @@
             // 
             // startingLocationComboBox
             // 
+            this.startingLocationComboBox.DisplayMember = "None";
             this.startingLocationComboBox.FormattingEnabled = true;
             this.startingLocationComboBox.Location = new System.Drawing.Point(345, 53);
             this.startingLocationComboBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);

@@ -29,7 +29,10 @@ namespace Zork_Builder
             addButton.Enabled = !string.IsNullOrEmpty(RoomName);
         }
 
-      
+        private void addButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

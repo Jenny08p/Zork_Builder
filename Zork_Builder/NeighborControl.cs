@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Zork_Common;
 
+
+
 namespace Zork_Builder
 {
     public partial class NeighborControl : UserControl
@@ -80,6 +82,12 @@ namespace Zork_Builder
                 if (neighbor != NoRoom)
                 {
                     mRoom.Neighbors.Remove(Direction);
+                    Room selectedRoom = neighborsComboBox.SelectedItem as Room;
+                    
+                   //foreach (var control in mRoom.Values)
+                   //{
+                   //    control.Room = selectedRoom;
+                   //}
                 }
 
                 else
