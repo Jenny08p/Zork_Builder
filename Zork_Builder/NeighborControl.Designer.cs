@@ -43,11 +43,11 @@
             // 
             // directionTextBox
             // 
-            this.directionTextBox.Location = new System.Drawing.Point(0, 0);
+            this.directionTextBox.Location = new System.Drawing.Point(3, 2);
             this.directionTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.directionTextBox.Name = "directionTextBox";
             this.directionTextBox.ReadOnly = true;
-            this.directionTextBox.Size = new System.Drawing.Size(98, 22);
+            this.directionTextBox.Size = new System.Drawing.Size(143, 22);
             this.directionTextBox.TabIndex = 0;
             this.directionTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -55,11 +55,12 @@
             // 
             this.neighborsComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.roomsBindingSource, "Name", true));
             this.neighborsComboBox.DisplayMember = "Name";
+            this.neighborsComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.neighborsComboBox.FormattingEnabled = true;
-            this.neighborsComboBox.Location = new System.Drawing.Point(0, 30);
+            this.neighborsComboBox.Location = new System.Drawing.Point(3, 32);
             this.neighborsComboBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.neighborsComboBox.Name = "neighborsComboBox";
-            this.neighborsComboBox.Size = new System.Drawing.Size(98, 24);
+            this.neighborsComboBox.Size = new System.Drawing.Size(143, 24);
             this.neighborsComboBox.TabIndex = 1;
             this.neighborsComboBox.ValueMember = "Description";
             this.neighborsComboBox.SelectedIndexChanged += new System.EventHandler(this.NeighborsComboBox_SelectedIndexChanged);
@@ -94,7 +95,7 @@
             this.Controls.Add(this.directionTextBox);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "NeighborControl";
-            this.Size = new System.Drawing.Size(142, 62);
+            this.Size = new System.Drawing.Size(190, 64);
             ((System.ComponentModel.ISupportInitialize)(this.roomsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.roomsBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.worldViewModelBindingSource)).EndInit();

@@ -40,9 +40,7 @@ namespace Zork_Builder
                         neighborsComboBox.SelectedIndexChanged -= NeighborsComboBox_SelectedIndexChanged;
                         neighborsComboBox.DataSource = rooms;
                         Neighbor = mRoom.Neighbors.TryGetValue(Direction, out Room neighbor) ? neighbor: NoRoom;
-                        neighborsComboBox.SelectedIndexChanged -= NeighborsComboBox_SelectedIndexChanged;
-
-
+                        neighborsComboBox.SelectedIndexChanged += NeighborsComboBox_SelectedIndexChanged;
                     }
 
                     else
@@ -63,11 +61,6 @@ namespace Zork_Builder
         {
             InitializeComponent();
         }
-
-        private static readonly Room NoRoom = new Room() { Name = "None" }; 
-        private Directions mDirection;
-        private Room mRoom;
-       
         private void worldViewModelBindingSource1_CurrentChanged(object sender, EventArgs e)
         {
 
@@ -77,25 +70,23 @@ namespace Zork_Builder
         {
             if (mRoom != null)
             {
-                Room neighbor = Neighbor;
-
-                if (neighbor != NoRoom)
+               
+                Room selectedRoom = (Room)neighborsComboBox.SelectedItem;
+                if (selectedRoom == NoRoom)
                 {
                     mRoom.Neighbors.Remove(Direction);
-                    Room selectedRoom = neighborsComboBox.SelectedItem as Room;
-                    
-                   //foreach (var control in mRoom.Values)
-                   //{
-                   //    control.Room = selectedRoom;
-                   //}
                 }
-
                 else
                 {
-                    mRoom.Neighbors[Direction] = Neighbor;
+                    mRoom.Neighbors[Direction] = selectedRoom;
                 }
             }
         }
+
+        private readonly Room NoRoom = new Room() { Name = "None" };
+        private Directions mDirection;
+        private Room mRoom;
+
     }
 }
 

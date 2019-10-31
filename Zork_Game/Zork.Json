@@ -1,6 +1,5 @@
-﻿{
+{
   "World": {
-    "StartingLocation": "West of House",
     "Rooms": [
       {
         "Name": "West of House",
@@ -10,7 +9,6 @@
           "South": "South of House",
           "West": "Forest 1"
         }
-
       },
       {
         "Name": "North of House",
@@ -20,7 +18,6 @@
           "East": "Behind House",
           "West": "West of House"
         }
-
       },
       {
         "Name": "South of House",
@@ -29,7 +26,6 @@
           "East": "Behind House",
           "West": "West of House"
         }
-
       },
       {
         "Name": "Behind House",
@@ -39,17 +35,14 @@
           "East": "Clearing",
           "South": "South of House"
         }
-
       },
       {
         "Name": "Forest 1",
-        "LookName": "Forest",
         "Description": "This is a forest, with trees in all directions around you.",
         "Neighbors": {
           "South": "Forest 3",
           "East": "West of House"
         }
-
       },
       {
         "Name": "Forest 2",
@@ -58,7 +51,6 @@
           "South": "Clearing",
           "East": "Clearing"
         }
-
       },
       {
         "Name": "Forest 3",
@@ -66,9 +58,7 @@
         "Neighbors": {
           "North": "South of House",
           "East": "Clearing"
-
         }
-
       },
       {
         "Name": "Clearing",
@@ -77,8 +67,8 @@
           "West": "Forest 2",
           "South": "Forest 3"
         }
-
       }
-    ]
+    ],
+    "StartingLocation": "West of House"
   }
 }

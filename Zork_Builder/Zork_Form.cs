@@ -122,7 +122,22 @@ namespace Zork_Builder
 
         private void newWorldToolStripMenuItem_Click(object sender, EventArgs e)
         {
-          
+            //if (SaveGame() == DialogResult()
+            //    mViewModel.Game = new Game
+            //    {
+            //         World = new World()
+            //    }
+            //else
+            //{
+
+            //}
+
+            //mviewmodel.fullpath = null;
+            //mviewmodel.ismodified = true;
+            //worldview.RefeshData();
+            //updatetitle();
+            //isworldloaded = true;
+
         }
 
         private void RoomsListBox_SelectedIndexChanged(object sender, EventArgs e)
