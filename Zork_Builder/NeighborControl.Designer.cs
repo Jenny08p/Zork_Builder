@@ -33,12 +33,12 @@
             this.neighborsComboBox = new System.Windows.Forms.ComboBox();
             this.roomsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.worldViewModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.worldViewModelBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.roomsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.worldViewModelBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.roomsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.worldViewModelBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.worldViewModelBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.roomsBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.worldViewModelBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // directionTextBox
@@ -54,7 +54,6 @@
             // neighborsComboBox
             // 
             this.neighborsComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.roomsBindingSource, "Name", true));
-            this.neighborsComboBox.DataSource = this.roomsBindingSource1;
             this.neighborsComboBox.DisplayMember = "Name";
             this.neighborsComboBox.FormattingEnabled = true;
             this.neighborsComboBox.Location = new System.Drawing.Point(0, 30);
@@ -73,14 +72,15 @@
             // 
             this.worldViewModelBindingSource.DataSource = typeof(Zork_Builder.WorldViewModel);
             // 
-            // worldViewModelBindingSource1
-            // 
-            this.worldViewModelBindingSource1.DataSource = typeof(Zork_Builder.WorldViewModel);
-            // 
             // roomsBindingSource1
             // 
             this.roomsBindingSource1.DataMember = "Rooms";
             this.roomsBindingSource1.DataSource = this.worldViewModelBindingSource1;
+            // 
+            // worldViewModelBindingSource1
+            // 
+            this.worldViewModelBindingSource1.DataSource = typeof(Zork_Builder.WorldViewModel);
+            this.worldViewModelBindingSource1.CurrentChanged += new System.EventHandler(this.worldViewModelBindingSource1_CurrentChanged);
             // 
             // NeighborControl
             // 
@@ -96,8 +96,8 @@
             this.Size = new System.Drawing.Size(142, 62);
             ((System.ComponentModel.ISupportInitialize)(this.roomsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.worldViewModelBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.worldViewModelBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.roomsBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.worldViewModelBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

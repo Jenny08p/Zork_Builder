@@ -314,7 +314,7 @@
             this.roomsListBox.Size = new System.Drawing.Size(209, 308);
             this.roomsListBox.TabIndex = 10;
             this.roomsListBox.ValueMember = "Description";
-            this.roomsListBox.SelectedIndexChanged += new System.EventHandler(this.roomsListBox_SelectedIndexChanged);
+            this.roomsListBox.SelectedIndexChanged += new System.EventHandler(this.RoomsListBox_SelectedIndexChanged);
             // 
             // roomsBindingSource
             // 

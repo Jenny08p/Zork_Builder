@@ -33,12 +33,13 @@ namespace Zork_Builder
                     mRoom = value;
                     if (mRoom != null)
                     {
-                        var rooms = new List<Room>();
+                        var rooms = new List<Room>(mRoom.rooms);
                         rooms.Insert(0, NoRoom);
                         neighborsComboBox.DataSource = rooms;
-
-                       // _ = mRoom.Neighbors.TryGetValue(Direction, out Room Neighbor) ? Neighbor : NoRoom;
+                        
+                      Neighbor = mRoom.Neighbors.TryGetValue(Direction, out Room neighbor) ? neighbor: NoRoom;
                     }
+
                     else
                     {
                         neighborsComboBox.DataSource = null;
@@ -61,5 +62,10 @@ namespace Zork_Builder
         private static readonly Room NoRoom = new Room() { Name = "None" }; 
         private Directions mDirection;
         private Room mRoom;
+
+        private void worldViewModelBindingSource1_CurrentChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

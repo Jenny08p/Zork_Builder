@@ -21,6 +21,7 @@ namespace Zork_Common
 
        [JsonIgnore]
        public Dictionary<Directions, Room> Neighbors { get; set; }
+        public int rooms { get; set; }
 
         public Room():
             this(string.Empty, string.Empty, new Dictionary<Directions, string>())

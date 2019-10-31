@@ -16,7 +16,7 @@ namespace Zork_Builder
     {
         private WorldViewModel mViewModel;
 
-        public bool IsWorldLoaded { get; }
+        public bool IsWorldLoaded { get; set; }
 
         public static string AssemblyTitle = Assembly.GetExecutingAssembly().GetCustomAttribute<AssemblyTitleAttribute>().Title;
         public Zork_Form()
@@ -30,7 +30,7 @@ namespace Zork_Builder
                 { Directions.North, northNeighborControl },
                 { Directions.East, eastNeighborControl },
                 { Directions.South, southNeighborControl },
-                { Directions.West, westNeighborControl },
+                { Directions.West, westNeighborControl }
             };
         }
 
@@ -42,11 +42,13 @@ namespace Zork_Builder
                 mViewModel.Filename = openFileDialog1.FileName;
                 roomsBindingSource.DataSource = mViewModel.Rooms;
 
-                Room selectedRoom = roomsListBox.SelectedItem as Room;
+                Room selectedPlayer = roomsListBox.SelectedItem as Room;
                 foreach (var control in mNeighborControls.Values)
                 {
-                    control.Room = selectedRoom;
+                    control.Room = selectedPlayer;
                 }
+
+                IsWorldLoaded = true;
             }
         }
 
@@ -123,12 +125,12 @@ namespace Zork_Builder
           
         }
 
-        private void roomsListBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void RoomsListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Room selectedRoom = roomsListBox.SelectedItem as Room;
+            Room selectedPlayer = roomsListBox.SelectedItem as Room;
             foreach (var control in mNeighborControls.Values)
             {
-                control.Room = selectedRoom;
+                control.Room = selectedPlayer;
             }
         }
     }
