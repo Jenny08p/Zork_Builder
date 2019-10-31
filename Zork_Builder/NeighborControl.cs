@@ -33,7 +33,7 @@ namespace Zork_Builder
                     mRoom = value;
                     if (mRoom != null)
                     {
-                        var rooms = new List<Room>(mRoom.rooms);
+                        var rooms = new List<Room>(Zork_Form.mViewModel.Rooms);
                         rooms.Insert(0, NoRoom);
                         neighborsComboBox.DataSource = rooms;
                         
@@ -62,8 +62,13 @@ namespace Zork_Builder
         private static readonly Room NoRoom = new Room() { Name = "None" }; 
         private Directions mDirection;
         private Room mRoom;
-
+       
         private void worldViewModelBindingSource1_CurrentChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void neighborsComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

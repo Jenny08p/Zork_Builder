@@ -14,7 +14,7 @@ namespace Zork_Builder
 {
     public partial class Zork_Form : Form
     {
-        private WorldViewModel mViewModel;
+        public static WorldViewModel mViewModel;
 
         public bool IsWorldLoaded { get; set; }
 
@@ -42,10 +42,10 @@ namespace Zork_Builder
                 mViewModel.Filename = openFileDialog1.FileName;
                 roomsBindingSource.DataSource = mViewModel.Rooms;
 
-                Room selectedPlayer = roomsListBox.SelectedItem as Room;
+                Room selectedRoom = roomsListBox.SelectedItem as Room;
                 foreach (var control in mNeighborControls.Values)
                 {
-                    control.Room = selectedPlayer;
+                    control.Room = selectedRoom;
                 }
 
                 IsWorldLoaded = true;
@@ -127,10 +127,10 @@ namespace Zork_Builder
 
         private void RoomsListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Room selectedPlayer = roomsListBox.SelectedItem as Room;
+            Room selectedRoom = roomsListBox.SelectedItem as Room;
             foreach (var control in mNeighborControls.Values)
             {
-                control.Room = selectedPlayer;
+                control.Room = selectedRoom;
             }
         }
     }
