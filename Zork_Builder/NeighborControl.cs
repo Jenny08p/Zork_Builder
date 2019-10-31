@@ -35,9 +35,12 @@ namespace Zork_Builder
                     {
                         var rooms = new List<Room>(Zork_Form.mViewModel.Rooms);
                         rooms.Insert(0, NoRoom);
+                        neighborsComboBox.SelectedIndexChanged -= NeighborsComboBox_SelectedIndexChanged;
                         neighborsComboBox.DataSource = rooms;
-                        
-                      Neighbor = mRoom.Neighbors.TryGetValue(Direction, out Room neighbor) ? neighbor: NoRoom;
+                        Neighbor = mRoom.Neighbors.TryGetValue(Direction, out Room neighbor) ? neighbor: NoRoom;
+                        neighborsComboBox.SelectedIndexChanged -= NeighborsComboBox_SelectedIndexChanged;
+
+
                     }
 
                     else
@@ -68,9 +71,23 @@ namespace Zork_Builder
 
         }
 
-        private void neighborsComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void NeighborsComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (mRoom != null)
+            {
+                Room neighbor = Neighbor;
 
+                if (neighbor != NoRoom)
+                {
+                    mRoom.Neighbors.Remove(Direction);
+                }
+
+                else
+                {
+                    mRoom.Neighbors[Direction] = Neighbor;
+                }
+            }
         }
     }
 }
+

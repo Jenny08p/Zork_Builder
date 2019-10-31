@@ -62,7 +62,7 @@
             this.neighborsComboBox.Size = new System.Drawing.Size(98, 24);
             this.neighborsComboBox.TabIndex = 1;
             this.neighborsComboBox.ValueMember = "Description";
-            this.neighborsComboBox.SelectedIndexChanged += new System.EventHandler(this.neighborsComboBox_SelectedIndexChanged);
+            this.neighborsComboBox.SelectedIndexChanged += new System.EventHandler(this.NeighborsComboBox_SelectedIndexChanged);
             // 
             // roomsBindingSource
             // 

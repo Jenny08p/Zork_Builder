@@ -22,6 +22,7 @@ namespace Zork_Common
             {
                 neighborNames = neighborNamesToken.ToObject<Dictionary<Directions, string>>();
             }
+            else
             {
                 neighborNames = new Dictionary<Directions, string>();
             }
