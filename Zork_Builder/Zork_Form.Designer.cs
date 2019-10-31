@@ -97,7 +97,6 @@
             this.newWorldToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
             this.newWorldToolStripMenuItem.Size = new System.Drawing.Size(264, 26);
             this.newWorldToolStripMenuItem.Text = "New World";
-          
             // 
             // openWorldToolStripMenuItem
             // 
@@ -195,51 +194,67 @@
             // 
             // westNeighborControl
             // 
+            this.westNeighborControl.AllowDrop = true;
+            this.westNeighborControl.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.westNeighborControl.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.westNeighborControl.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.westNeighborControl.Direction = Zork_Common.Directions.West;
-            this.westNeighborControl.Location = new System.Drawing.Point(15, 336);
+            this.westNeighborControl.Location = new System.Drawing.Point(15, 327);
             this.westNeighborControl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.westNeighborControl.Name = "westNeighborControl";
+            this.westNeighborControl.Neighbor = null;
             this.westNeighborControl.Room = null;
             this.westNeighborControl.Size = new System.Drawing.Size(109, 64);
             this.westNeighborControl.TabIndex = 20;
             // 
             // eastNeighborControl
             // 
+            this.eastNeighborControl.AllowDrop = true;
+            this.eastNeighborControl.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.eastNeighborControl.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.eastNeighborControl.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.eastNeighborControl.Direction = Zork_Common.Directions.East;
-            this.eastNeighborControl.Location = new System.Drawing.Point(159, 336);
+            this.eastNeighborControl.Location = new System.Drawing.Point(171, 318);
             this.eastNeighborControl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.eastNeighborControl.Name = "eastNeighborControl";
+            this.eastNeighborControl.Neighbor = null;
             this.eastNeighborControl.Room = null;
             this.eastNeighborControl.Size = new System.Drawing.Size(112, 73);
             this.eastNeighborControl.TabIndex = 19;
             // 
             // southNeighborControl
             // 
+            this.southNeighborControl.AllowDrop = true;
+            this.southNeighborControl.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.southNeighborControl.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.southNeighborControl.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.southNeighborControl.Direction = Zork_Common.Directions.South;
-            this.southNeighborControl.Location = new System.Drawing.Point(159, 238);
+            this.southNeighborControl.Location = new System.Drawing.Point(171, 236);
             this.southNeighborControl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.southNeighborControl.Name = "southNeighborControl";
+            this.southNeighborControl.Neighbor = null;
             this.southNeighborControl.Room = null;
             this.southNeighborControl.Size = new System.Drawing.Size(112, 66);
             this.southNeighborControl.TabIndex = 18;
             // 
             // northNeighborControl
             // 
+            this.northNeighborControl.AllowDrop = true;
+            this.northNeighborControl.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.northNeighborControl.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.northNeighborControl.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.northNeighborControl.Direction = Zork_Common.Directions.North;
-            this.northNeighborControl.Location = new System.Drawing.Point(16, 238);
+            this.northNeighborControl.Location = new System.Drawing.Point(15, 236);
             this.northNeighborControl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.northNeighborControl.Name = "northNeighborControl";
+            this.northNeighborControl.Neighbor = null;
             this.northNeighborControl.Room = null;
             this.northNeighborControl.Size = new System.Drawing.Size(109, 66);
             this.northNeighborControl.TabIndex = 17;
             // 
             // deleteRoomButton
             // 
-            this.deleteRoomButton.Location = new System.Drawing.Point(395, 415);
+            this.deleteRoomButton.Location = new System.Drawing.Point(434, 412);
             this.deleteRoomButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.deleteRoomButton.Name = "deleteRoomButton";
             this.deleteRoomButton.Size = new System.Drawing.Size(75, 23);
@@ -250,7 +265,7 @@
             // 
             // addRoomButton
             // 
-            this.addRoomButton.Location = new System.Drawing.Point(315, 415);
+            this.addRoomButton.Location = new System.Drawing.Point(345, 412);
             this.addRoomButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.addRoomButton.Name = "addRoomButton";
             this.addRoomButton.Size = new System.Drawing.Size(75, 23);
@@ -262,7 +277,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(317, 34);
+            this.label4.Location = new System.Drawing.Point(342, 34);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(115, 17);
             this.label4.TabIndex = 14;
@@ -271,7 +286,7 @@
             // startingLocationComboBox
             // 
             this.startingLocationComboBox.FormattingEnabled = true;
-            this.startingLocationComboBox.Location = new System.Drawing.Point(315, 53);
+            this.startingLocationComboBox.Location = new System.Drawing.Point(345, 53);
             this.startingLocationComboBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.startingLocationComboBox.Name = "startingLocationComboBox";
             this.startingLocationComboBox.Size = new System.Drawing.Size(209, 24);
@@ -280,7 +295,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(311, 81);
+            this.label3.Location = new System.Drawing.Point(342, 79);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(52, 17);
             this.label3.TabIndex = 12;
@@ -292,13 +307,14 @@
             this.roomsListBox.DisplayMember = "Name";
             this.roomsListBox.FormattingEnabled = true;
             this.roomsListBox.ItemHeight = 16;
-            this.roomsListBox.Location = new System.Drawing.Point(315, 101);
+            this.roomsListBox.Location = new System.Drawing.Point(345, 100);
             this.roomsListBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.roomsListBox.Name = "roomsListBox";
             this.roomsListBox.ScrollAlwaysVisible = true;
             this.roomsListBox.Size = new System.Drawing.Size(209, 308);
             this.roomsListBox.TabIndex = 10;
             this.roomsListBox.ValueMember = "Description";
+            this.roomsListBox.SelectedIndexChanged += new System.EventHandler(this.roomsListBox_SelectedIndexChanged);
             // 
             // roomsBindingSource
             // 

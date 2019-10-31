@@ -49,6 +49,8 @@ namespace Zork_Builder
                 }
             }
         }
+
+       // private readonly Dictionary<Directions, NeighborControl> mNeighborControlMap;
         private void SaveCtrlSToolStripMenuItem_Click(object sender, EventArgs e)
         {
             mViewModel.SaveGame();
@@ -118,14 +120,15 @@ namespace Zork_Builder
 
         private void newWorldToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string ans = JsonConvert.SerializeObject(mViewModel, Formatting.Indented);
-            if (File.Exists(@"E:\" + " device.json"))
+          
+        }
+
+        private void roomsListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Room selectedRoom = roomsListBox.SelectedItem as Room;
+            foreach (var control in mNeighborControls.Values)
             {
-                File.AppendAllText(@"E:\" + " device.json", Name);
-            }
-            else 
-            {
-                System.IO.File.WriteAllText(@"E:\" + " device.json", ans);
+                control.Room = selectedRoom;
             }
         }
     }

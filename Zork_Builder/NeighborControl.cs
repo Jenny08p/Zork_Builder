@@ -28,24 +28,37 @@ namespace Zork_Builder
             get => mRoom;
             set
             {
-                mRoom = value;
-                if (mRoom != null)
+                if (mRoom != value)
                 {
-                    // assign the neighbor
-                }
-                else
-                {
+                    mRoom = value;
+                    if (mRoom != null)
+                    {
+                        var rooms = new List<Room>();
+                        rooms.Insert(0, NoRoom);
+                        neighborsComboBox.DataSource = rooms;
+
+                       // _ = mRoom.Neighbors.TryGetValue(Direction, out Room Neighbor) ? Neighbor : NoRoom;
+                    }
+                    else
+                    {
+                        neighborsComboBox.DataSource = null;
+                    }
                 }
             }
         }
 
+        public Room Neighbor
+        {
+            get => (Room)neighborsComboBox.SelectedItem;
+            set => neighborsComboBox.SelectedItem = value;
+        }
 
         public NeighborControl()
         {
             InitializeComponent();
         }
 
-
+        private static readonly Room NoRoom = new Room() { Name = "None" }; 
         private Directions mDirection;
         private Room mRoom;
     }
