@@ -7,6 +7,8 @@ using Zork_Builder;
 using Newtonsoft.Json;
 using Zork_Common;
 using System.Collections.Generic;
+using System.Linq;
+
 
 namespace Zork_Builder
 {
@@ -95,32 +97,29 @@ namespace Zork_Builder
    
         private void addRoomButton_Click(object sender, EventArgs e)
         {
-        //    using (AddRoomForm addRoomForm = new AddRoomForm())
-        //    {
-        //        if (addPlayerForm.ShowDialog() == DialogResult.OK)
-        //        {
-        //            Player player = new Player { Name = addRoomForm.PlayerName };
-        //            mViewModel.Players.Add(player);
-        //        }
-        //    }
+            using (AddRoom addRoom = new AddRoom())
+            {
+                if (addRoom.ShowDialog() == DialogResult.OK)
+                {
+                    Room room = new Room { Name = addRoom.RoomName };
+                    mViewModel.Rooms.Add(room);
+                }
+            }
         }
 
         private void deleteRoomButton_Click(object sender, EventArgs e)
         {
-            //if (MessageBox.Show("Delete this item?", AssemblyTitle, MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question) == DialogResult.Yes)
-            //{
-            //    mViewModel.RemoveItem((Room)roomsListBox.SelectedItem);
-            //    roomsListBox.SelectedItem = mViewModel.Rooms.FirstOrDefault();
-            //}
+         if (MessageBox.Show($"Delete { ((Room)roomsListBox.SelectedItem).Name }?", AssemblyTitle, MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question) == DialogResult.Yes)
+         {
+             mViewModel.Rooms.Remove((Room)roomsListBox.SelectedItem);
+             roomsListBox.SelectedItem = mViewModel.Rooms.FirstOrDefault();
+         }
         }
+    
+        private void newWorldToolStripMenuItem_Click(object sender, EventArgs e)
+        {
 
-       // private void ItemsListBox_SelectedIndexChanged(object sender, EventArgs e) => deleteRoomButton.Enabled = itemsListBox.SelectedItem != null;
-        private void AddItemToInventoryButton_Click(object sender, EventArgs e) => ShowNotYetImplementedMessageBox();
-
-        private void RemoveItemFromInventoryButton_Click(object sender, EventArgs e) => ShowNotYetImplementedMessageBox();
-
-        private void ShowNotYetImplementedMessageBox() => MessageBox.Show("Not yet implemented.", AssemblyTitle, MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+        }
     }
 }
 
