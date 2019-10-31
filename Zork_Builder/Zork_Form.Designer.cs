@@ -97,7 +97,7 @@
             this.newWorldToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
             this.newWorldToolStripMenuItem.Size = new System.Drawing.Size(264, 26);
             this.newWorldToolStripMenuItem.Text = "New World";
-            this.newWorldToolStripMenuItem.Click += new System.EventHandler(this.newWorldToolStripMenuItem_Click);
+          
             // 
             // openWorldToolStripMenuItem
             // 

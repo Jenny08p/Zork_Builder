@@ -8,7 +8,7 @@ using Newtonsoft.Json;
 using Zork_Common;
 using System.Collections.Generic;
 using System.Linq;
-
+using Newtonsoft.Json.Linq;
 
 namespace Zork_Builder
 {
@@ -115,10 +115,18 @@ namespace Zork_Builder
              roomsListBox.SelectedItem = mViewModel.Rooms.FirstOrDefault();
          }
         }
-    
+
         private void newWorldToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            string ans = JsonConvert.SerializeObject(mViewModel, Formatting.Indented);
+            if (File.Exists(@"E:\" + " device.json"))
+            {
+                File.AppendAllText(@"E:\" + " device.json", Name);
+            }
+            else 
+            {
+                System.IO.File.WriteAllText(@"E:\" + " device.json", ans);
+            }
         }
     }
 }

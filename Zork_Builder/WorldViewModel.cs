@@ -20,10 +20,13 @@ namespace Zork_Builder
 
         public BindingList<Room> Rooms { get; set; }
 
+        public BindingList<StartingLocation> StartingLocations { get; set; }
+
 
         public WorldViewModel()
         {
             Rooms = new BindingList<Room>(Array.Empty<Room>());
+            StartingLocations = new BindingList<StartingLocation>(Array.Empty<StartingLocation>());
         }
 
         public Game Game
@@ -62,16 +65,6 @@ namespace Zork_Builder
                 serializer.Serialize(jsonWriter, mGame);
             }
         }
-
-        //public void RemoveName(Name name)
-        //{
-        //    foreach (Room room in Rooms)
-        //    {
-        //        Room.Rooms.Remove(name);
-        //    }
-
-        //    Names.Remove(name);
-        //}
 
         private Game mGame;
     }
