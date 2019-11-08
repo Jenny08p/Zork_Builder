@@ -30,6 +30,8 @@ namespace Zork_Common
             }
         }
 
+        public int Moves { get; set; }
+
         public Player(World world, string startingLocation)
         {
             World = world;
