@@ -61,7 +61,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Scripts\iterator.cs" />
     <Compile Include="Assets\Scripts\UnityOutputService.cs" />
+    <Compile Include="Assets\Scripts\UniyInputService.cs" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
@@ -295,6 +297,9 @@
     <Reference Include="UnityEngine.SpatialTracking">
       <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>C:/Users/an446273/Documents/GitHub/Zork/Zork_Unity/Assets/netstandard2.0/Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="Zork_Common">
       <HintPath>C:/Users/an446273/Documents/GitHub/Zork/Zork_Unity/Assets/netstandard2.0/Zork_Common.dll</HintPath>
     </Reference>
@@ -306,9 +311,6 @@
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
       <HintPath>C:/Users/an446273/Documents/GitHub/Zork/Zork_Unity/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>C:/Users/an446273/Documents/GitHub/Zork/Zork_Unity/Assets/netstandard2.0/Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:/Program Files/Unity/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>

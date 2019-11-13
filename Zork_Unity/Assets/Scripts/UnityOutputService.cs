@@ -8,9 +8,17 @@ public class UnityOutputService : MonoBehaviour, IOutputService
 {
     [SerializeField]
     private TextMeshProUGUI TextLinePrefab;
-
     [SerializeField]
     private Transform OutputTextContainer;
+    [SerializeField]
+    private int MaxTextLines = 60;
+
+    private List<GameObject> mTextLines;
+
+    public UnityOutputService()
+    {
+       mTextLines = new List<GameObject>();
+    }
 
     public void Clear()
     {
@@ -29,14 +37,20 @@ public class UnityOutputService : MonoBehaviour, IOutputService
 
     public void WriteLine(string value)
     {
-        //throw new System.NotImplementedException();
-        var textline = Instantiate(TextLinePrefab);
-        textline.transform.SetParent(OutputTextContainer, false);
-        textline.text = value;
+        if (mTextLines.Count >= MaxTextLines)
+        {
+            Destroy(mTextLines[0]);
+            mTextLines.RemoveAt(0);
+        }
+
+        var textLine = Instantiate(TextLinePrefab);
+        textLine.transform.SetParent(OutputTextContainer, false);
+        textLine.text = value;
+        mTextLines.Add(textLine.gameObject);
     }
 
     public void WriteLine(object value)
     {
-        throw new System.NotImplementedException();
+        WriteLine(value.ToString());
     }
 }
