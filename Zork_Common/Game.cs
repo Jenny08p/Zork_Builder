@@ -46,11 +46,14 @@ namespace Zork_Common
 
                 new Command("EAST", new string[] { "EAST", "E" }, MovementCommands.East),
 
-                new Command("WEST", new string[] { "WEST", "W" }, MovementCommands.West)
-            };
+                new Command("WEST", new string[] { "WEST", "W" }, MovementCommands.West),
 
+                new Command("REWARD", new string[] {"REWARD", "R" }, Reward),
+
+                new Command("SCORE", "SCORE", Score)
+            };
             CommandManager = new CommandManager(commands);
-        }
+    }
 
         public static Game LoadFromFile(string filename, IOutputService output, IInputService input)
         {
@@ -87,6 +90,17 @@ namespace Zork_Common
             {
                 Output.WriteLine("That's not a valid command.");
             }
+        }
+
+        private static void Reward(Game game, CommandContext commandContext)
+        {
+            game.Player.Score++;
+            game.Output.WriteLine("You have been rewarded 1 point.");
+        }
+
+        private static void Score(Game game, CommandContext commandContext)
+        {
+            game.Output.WriteLine($"Your score would be {game.Player.Score}, in {game.Player.Moves} move(s)");
         }
     }
 }
