@@ -57,6 +57,6 @@ public class GameManager : MonoBehaviour
 
     void Score()
     {
-        ScoreText.text += ;
+ //       ScoreText.text +=
     }
 }
