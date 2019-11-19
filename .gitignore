@@ -329,7 +329,7 @@ ASALocalRun/
 # MFractors (Xamarin productivity tool) working folder 
 .mfractor/
 
-#Andrew's Ignored Files
+# My Ignored Files
 .vs/
 packages/
 */bin/
