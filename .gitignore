@@ -2,10 +2,10 @@
 packages/
 */bin/
 */obj/
-Zork_Builder/Zork_Unity/.vs/
-Zork_Builder/Zork_Unity/Build/
-Zork_Builder/Zork_Unity/Library/
-Zork_Builder/Zork_Unity/Logs/
-Zork_Builder/Zork_Unity/Temp/
-Zork_Builder/Zork_Unity/*.csproj/
-Zork_Builder/Zork_Unity/*.sln/
+Zork_Unity/.vs/
+Zork_Unity/Build/
+Zork_Unity/Library/
+Zork_Unity/Logs/
+Zork_Unity/Temp/
+Zork_Unity/*.csproj/
+Zork_Unity/*.sln/
