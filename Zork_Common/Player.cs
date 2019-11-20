@@ -44,9 +44,7 @@ namespace Zork_Common
             }
         }
 
-        public int Moves { get; set; }
-
-        public int CustomMoves
+        public int Moves
         {
             get => mMove;
             set
