@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour
         Game.Player.ScoreChanged += ScoreChanged;
 
         ScoreText.text = $"Score: {Game.Player.Score}";
-        MovesText.text = $"Moves: {Game.Player.Moves}";
+        MovesText.text = $"Moves: {Game.Player.CustomMoves}";
         LocationText.text = $"Location: {Game.Player.Location}";
     }
 
@@ -43,6 +43,11 @@ public class GameManager : MonoBehaviour
     {
         Game.Output.WriteLine("Welcome To Zork!");
         Game.CommandManager.PerformCommand(Game, "LOOK");
+
+        for(int i = 0; i < 20; i++)
+        {
+            Game.Output.WriteLine(0);
+        }
     }
 
     void Update()
@@ -53,20 +58,13 @@ public class GameManager : MonoBehaviour
             {
                 Game.Output.WriteLine($"> {InputService.InputField.text}");
                 InputService.ProcessInput();
+                ScoreText.text = $"Score: {Game.Player.Score}";
+                MovesText.text = $"Moves: {Game.Player.CustomMoves}";
                 LocationText.text = $"Location: {Game.Player.Location}";
             }
             InputService.InputField.text = string.Empty;
             InputService.InputField.ActivateInputField();
             InputService.InputField.Select();
-        }
-
-        if((Game.IsRunning == false)||(Input.GetKey("escape")))
-        {
-            #if UNITY_EDITOR
-            UnityEditor.EditorApplication.isPlaying = false;
-            #else
-            Application.Quit();
-            #endif
         }
     }
 
