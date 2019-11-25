@@ -35,20 +35,6 @@ public class GameManager : MonoBehaviour
         {
             Game.Output.WriteLine(0);
         }
-
-        InputService.InputField.Select();
-        InputService.InputField.ActivateInputField();
-        InputService.InputField.text = string.Empty;
-    }
-
-    void Awake()
-    {
-        InputService.InputField.Select();
-        InputService.InputField.ActivateInputField();
-        InputService.InputField.text = string.Empty;
-
-        Game.Player.PlayerMoved += mPlayerMoved;
-        Game.Player.ScoreChanged += mScoreChanged;
     }
 
     void Update()
@@ -69,12 +55,8 @@ public class GameManager : MonoBehaviour
         WriteLine(value.ToString());
     }
 
-    private void mPlayerMoved(object sender, int e)
+    void Score()
     {
-        MovesText.text = $"Moves: {Game.Player.Moves}";
-    }
-    private void mScoreChanged(object sender, int e)
-    {
-        ScoreText.text = $"Score: {Game.Player.Score}";
+ //       ScoreText.text +=
     }
 }

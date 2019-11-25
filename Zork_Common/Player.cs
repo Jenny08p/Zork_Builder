@@ -9,7 +9,6 @@ namespace Zork_Common
     public class Player
     {
         public event EventHandler<int> ScoreChanged;
-        public event EventHandler<int> PlayerMoved;
 
         public World World { get; }
 
@@ -25,10 +24,12 @@ namespace Zork_Common
         }
 
         [JsonIgnore]
+
         public Room Location { get; private set; }
 
 
         [JsonIgnore]
+
         public string LocationName
         {
             get
