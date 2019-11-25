@@ -14,7 +14,6 @@ namespace Zork_Common
         public World World { get; }
 
         private int mScore;
-        private int mMove;
         public int Score
         {
             get => mScore;
@@ -26,12 +25,10 @@ namespace Zork_Common
         }
 
         [JsonIgnore]
-
         public Room Location { get; private set; }
 
 
         [JsonIgnore]
-
         public string LocationName
         {
             get
@@ -45,16 +42,6 @@ namespace Zork_Common
         }
 
         public int Moves { get; set; }
-
-        public int CustomMoves
-        {
-            get => mMove;
-            set
-            {
-                mMove = value;
-                PlayerMoved?.Invoke(this, mMove);
-            }
-        }
 
         public Player(World world, string startingLocation)
         {
