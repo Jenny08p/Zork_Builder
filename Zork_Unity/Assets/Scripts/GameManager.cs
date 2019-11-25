@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Zork_Common;
-using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -16,12 +15,6 @@ public class GameManager : MonoBehaviour
     private UniyInputService InputService;
 
     private Game Game { get; set; }
-
-    [SerializeField]
-    private TMP_Text ScoreText;
-
-    [SerializeField]
-    private TMP_Text MovesText;
 
     void Start()
     {
@@ -55,8 +48,4 @@ public class GameManager : MonoBehaviour
         WriteLine(value.ToString());
     }
 
-    void Score()
-    {
-        ScoreText.text += ;
-    }
 }

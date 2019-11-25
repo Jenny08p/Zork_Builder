@@ -8,20 +8,8 @@ namespace Zork_Common
 {
     public class Player
     {
-        public event EventHandler<int> ScoreChanged;
 
         public World World { get; }
-
-        private int mScore;
-        public int Score
-        {
-            get => mScore;
-            set
-            {
-                mScore = value;
-                ScoreChanged?.Invoke(this, mScore);
-            }
-        }
 
         [JsonIgnore]
 

@@ -522,8 +522,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 502.5, y: -3.0013}
-  m_SizeDelta: {x: 1005, y: 222.53}
+  m_AnchoredPosition: {x: 502.5, y: 0}
+  m_SizeDelta: {x: 1005, y: 316}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &504817876
 MonoBehaviour:
@@ -815,7 +815,7 @@ MonoBehaviour:
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
   m_isInputParsingRequired: 0
-  m_inputSource: 0
+  m_inputSource: 3
   m_hasFontAssetChanged: 0
   m_subTextObjects:
   - {fileID: 0}
@@ -900,8 +900,6 @@ MonoBehaviour:
   GameFilename: Zork
   OutputService: {fileID: 637309850}
   InputService: {fileID: 637309853}
-  ScoreText: {fileID: 637686165}
-  MovesText: {fileID: 1758160814}
 --- !u!114 &637309853
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1288,7 +1286,7 @@ MonoBehaviour:
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
   m_isInputParsingRequired: 0
-  m_inputSource: 0
+  m_inputSource: 3
   m_hasFontAssetChanged: 0
   m_subTextObjects:
   - {fileID: 0}
@@ -2037,7 +2035,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 111.264984}
+  m_AnchoredPosition: {x: 0, y: 158}
   m_SizeDelta: {x: 988, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1832623568
@@ -2156,7 +2154,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 892461571}
   m_Direction: 2
   m_Value: 0
-  m_Size: 1
+  m_Size: 0.9999994
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
