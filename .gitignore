@@ -328,16 +328,3 @@ ASALocalRun/
 
 # MFractors (Xamarin productivity tool) working folder 
 .mfractor/
-
-#Andrew's Ignored Files
-.vs/
-packages/
-*/bin/
-*/obj/
-Zork_Unity/.vs/
-Zork_Unity/Build/
-Zork_Unity/Library/
-Zork_Unity/Logs/
-Zork_Unity/Temp/
-Zork_Unity/*csproj/
-Zork_Unity/*.sln/
