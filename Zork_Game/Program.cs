@@ -17,14 +17,11 @@ namespace Zork_Game
             string gameFilename = (args.Length > 0 ? args[(int)CommandLineArguments.GameFilename] : defaultGameFilename);
 
             ConsoleOutputService output = new ConsoleOutputService();
-            ConsoleInputService input = new ConsoleInputService();
-            Game game = Game.LoadFromFile(gameFilename, output, input);
+            Game game = Game.LoadFromFile(gameFilename, output);
 
-            while (game.IsRunning)
-            {
-                output.Write("> ");
-                input.ProcessInput();
-            }
+            //Game game = Game.Load(gameFilename);
+            output.WriteLine("Welcome to Zork!");
+            game.Run();
             output.WriteLine("Thanks for playing!");
         }
 

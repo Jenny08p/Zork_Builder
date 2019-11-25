@@ -13,7 +13,7 @@ namespace Zork_Common
         public Player Player { get; private set; }
 
         [JsonIgnore]
-        public bool IsRunning { get; set; }
+        private bool IsRunning { get; set; }
 
         [JsonIgnore]
         public CommandManager CommandManager { get; }
@@ -21,8 +21,6 @@ namespace Zork_Common
         [JsonIgnore]
         public IOutputService Output { get; private set; }
 
-        [JsonIgnore]
-        public IInputService Input { get; private set; }
 
         public Game(World world, Player player)
         {
@@ -35,10 +33,10 @@ namespace Zork_Common
             Command[] commands =
             {
                 new Command("LOOK", new string[] { "LOOK", "L" },
-                    (game, commandContext) => Output.WriteLine($"{game.Player.Location.Name}\n{game.Player.Location.Description }")),
+                    (game, commandContext) => Output.WriteLine(game.Player.Location.Description)),
 
                 new Command("QUIT", new string[] { "QUIT", "Q" },
-                (game, commandContext) => game.IsRunning = false),
+                    (game, commandContext) => game.IsRunning = false),
 
                 new Command("NORTH", new string[] { "NORTH", "N" }, MovementCommands.North),
 
@@ -52,41 +50,43 @@ namespace Zork_Common
             CommandManager = new CommandManager(commands);
         }
 
-        public static Game LoadFromFile(string filename, IOutputService output, IInputService input)
+        public void Run()
         {
-            return Load(File.ReadAllText(filename), output, input);
-        }
-
-        public static Game Load(string jsonString, IOutputService output, IInputService input)
-        {
-            Game game = JsonConvert.DeserializeObject<Game>(jsonString);
-            game.Output = output;
-            game.Input = input;
-            game.Player = game.World.SpawnPlayer();
-            game.IsRunning = true;
-            game.Input.InputReceived += game.InputReceived;
-            output.WriteLine("Welcome to Zork!");
-            game.CommandManager.PerformCommand(game, "LOOK");
-
-            return game;
-        }
-
-        private void InputReceived(object sender, string inputString)
-        {
-            Room previousRoom = Player.Location;
-            if (CommandManager.PerformCommand(this, inputString))
+            IsRunning = true;
+            Room previousRoom = null;
+            while (IsRunning)
             {
-                Player.Moves++;
-
+                Output.WriteLine(Player.Location);
                 if (previousRoom != Player.Location)
                 {
                     CommandManager.PerformCommand(this, "LOOK");
+                    previousRoom = Player.Location;
+                }
+
+                Output.Write("\n> ");
+                if (CommandManager.PerformCommand(this, Console.ReadLine().Trim()))
+                {
+                    Player.Moves++;
+                }
+                else
+                {
+                    Output.WriteLine("That's not a verb I recognize.");
                 }
             }
-            else
-            {
-                Output.WriteLine("That's not a valid command.");
-            }
+        }
+
+        public static Game LoadFromFile(string filename, IOutputService output)
+        {
+            return Load(File.ReadAllText(filename), output);
+        }
+
+        public static Game Load(string jsonString, IOutputService output)
+        {
+            Game game = JsonConvert.DeserializeObject<Game>(jsonString);
+            game.Output = output;
+            game.Player = game.World.SpawnPlayer();
+
+            return game;
         }
     }
 }
